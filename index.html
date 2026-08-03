@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ===== SEO 기본 ===== -->
+<title>무인화연구소 | 무인 창업 · 무인 매장 솔루션 (스터디카페·워크라운지)</title>
+<meta name="description" content="무인화연구소는 무인 매장 시스템을 직접 개발하는 프랜차이즈 본부입니다. AIoT 자동제어·앱 결제 출입통제·CCTV 관제 솔루션과 앤딩스터디카페(인수·신규 창업)·앤딩워크라운지 공실 수익화 무인 창업을 안내합니다.">
+<meta name="keywords" content="무인창업,무인 스터디카페 창업,스터디카페 창업,워크라운지 창업,공실 수익화,무인매장 솔루션,AIoT,무인 프랜차이즈,앤딩스터디카페,앤딩워크라운지,무인화연구소,인수창업,신규창업">
+<meta name="robots" content="index,follow">
+<meta name="author" content="무인화연구소">
+<link rel="canonical" href="https://www.muinlab.io/">
+<meta name="naver-site-verification" content="여기에_네이버_서치어드바이저_인증코드">
+<meta name="google-site-verification" content="여기에_구글_서치콘솔_인증코드">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="무인화연구소">
+<meta property="og:title" content="무인화연구소 | 무인 창업 · 무인 매장 솔루션">
+<meta property="og:description" content="무인 매장 시스템을 직접 개발하는 프랜차이즈 본부. 스터디카페·워크라운지 무인 창업과 AIoT·출입·CCTV 솔루션을 안내합니다.">
+<meta property="og:url" content="https://www.muinlab.io/">
+<meta property="og:image" content="https://www.muinlab.io/og-image.jpg">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Organization",
+  "name":"무인화연구소",
+  "legalName":"(주)무인화연구소",
+  "url":"https://www.muinlab.io/",
+  "logo":"https://www.muinlab.io/logo.png",
+  "telephone":"+82-1811-9544",
+  "email":"biz@muinlab.io",
+  "address":{"@type":"PostalAddress","streetAddress":"올림픽로32길 32, 305호","addressLocality":"서울","addressCountry":"KR"},
+  "description":"무인 매장 시스템을 직접 개발하는 무인 창업 프랜차이즈 본부",
+  "sameAs":["https://www.youtube.com/","https://www.instagram.com/"]
+}
+</script>
+
+<style>
+:root{
+  /* Tinker 팔레트 · 솔루션=딥그린 / 창업=라임 / 코랄 포인트 */
+  --paper:#F1F1EC;--ink:#1A1E1A;--muted:#5b625a;
+  --green:#2E5A3E;--green-deep:#213f2c;--green-soft:#3E6B4A;--sage:#A9C48A;
+  --lime:#C8F03C;--lime-deep:#b4e01f;--lime-lite:#eef9c4;
+  --coral:#EF9A87;--coral-deep:#e5806a;--line:#e2e0d6;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Pretendard',-apple-system,BlinkMacSystemFont,'Malgun Gothic',sans-serif;color:var(--ink);background:var(--paper);line-height:1.6;-webkit-font-smoothing:antialiased}
+a{text-decoration:none;color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+.btn{display:inline-flex;align-items:center;gap:8px;font-weight:800;border-radius:999px;padding:11px 20px;font-size:14px;transition:.2s;cursor:pointer;border:none}
+.btn-coral{background:var(--coral);color:var(--ink)}
+.btn-coral:hover{background:var(--coral-deep);transform:translateY(-2px)}
+
+/* nav */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(241,241,236,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:900;font-size:19px;color:var(--ink)}
+.logo .mark{width:32px;height:32px;background:linear-gradient(135deg,var(--green),var(--lime));color:#fff;border-radius:8px;display:grid;place-items:center;font-size:11px;font-weight:900;letter-spacing:-1px}
+.menu{display:flex;gap:22px;list-style:none;align-items:center}
+.menu a{font-weight:700;font-size:14px;color:var(--ink);transition:.15s}
+.menu a.s:hover{color:var(--green)}
+.menu a.b:hover{color:var(--lime-deep)}
+.nav-right{display:flex;align-items:center;gap:16px}
+.nav-tel{font-weight:800;color:var(--ink);font-size:15px}
+@media(max-width:1080px){.nav-tel{display:none}}
+@media(max-width:860px){.menu{display:none}}
+
+/* ===== SPLIT HERO ===== */
+.split-hero{display:flex;min-height:100vh;padding-top:64px}
+.half{flex:1 1 50%;position:relative;overflow:hidden;display:flex;align-items:center;
+  transition:flex-basis .5s cubic-bezier(.4,0,.2,1);cursor:pointer}
+.half .bgpat{position:absolute;inset:0;opacity:.16;mix-blend-mode:overlay}
+.half .inner{position:relative;z-index:2;padding:0 8% 0 12%;max-width:640px;margin-left:auto}
+.half.right .inner{margin-left:0;margin-right:auto;padding:0 12% 0 8%}
+.half .eb{display:inline-block;font-weight:800;font-size:15px;letter-spacing:.04em;padding:7px 15px;border-radius:999px;margin-bottom:22px}
+.half h2{font-size:48px;font-weight:900;line-height:1.15;letter-spacing:-.03em}
+.half p{font-size:18px;margin-top:18px;line-height:1.6}
+.half .tags{margin-top:26px;display:flex;flex-wrap:wrap;gap:10px}
+.half .tags span{font-size:14px;font-weight:700;padding:8px 14px;border-radius:999px}
+.half .go{margin-top:34px;display:inline-flex;align-items:center;gap:10px;font-weight:800;font-size:17px;border-radius:999px;padding:15px 30px;transition:.2s}
+.half .arrow{transition:.25s}
+.half:hover .arrow{transform:translateX(6px)}
+
+/* 왼쪽 = 무인 솔루션 (딥그린 · 흰 글씨) */
+.half.left{background:linear-gradient(150deg,#3E6B4A,#2E5A3E 55%,#213f2c);color:#fff}
+.half.left .bgpat{background:repeating-linear-gradient(90deg,transparent 0 70px,rgba(255,255,255,.2) 70px 72px)}
+.half.left .eb{background:rgba(255,255,255,.16);color:#f0fff2}
+.half.left p{color:rgba(255,255,255,.9)}
+.half.left .tags span{background:rgba(255,255,255,.16);color:#fff;border:1px solid rgba(255,255,255,.28)}
+.half.left .go{background:#fff;color:var(--green-deep)}
+.half.left .go:hover{background:var(--sage);color:var(--green-deep)}
+
+/* 오른쪽 = 무인 창업 (라임 · 검정 글씨) */
+.half.right{background:linear-gradient(150deg,#d4f552,#C8F03C 55%,#b4e01f);color:var(--ink)}
+.half.right .bgpat{background:repeating-linear-gradient(0deg,transparent 0 70px,rgba(0,0,0,.14) 70px 72px)}
+.half.right .eb{background:rgba(0,0,0,.1);color:var(--ink)}
+.half.right p{color:#23281f}
+.half.right .tags span{background:rgba(0,0,0,.08);color:var(--ink);border:1px solid rgba(0,0,0,.14)}
+.half.right .go{background:var(--ink);color:var(--lime)}
+.half.right .go:hover{background:#000;transform:translateY(-2px)}
+
+/* hover 확장 */
+.split-hero:hover .half{flex-basis:42%}
+.split-hero .half:hover{flex-basis:58%}
+
+/* 가운데 브랜드 마크 (코랄) */
+.split-mark{position:absolute;left:50%;top:calc(50% + 32px);transform:translate(-50%,-50%);z-index:5;
+  background:var(--coral);color:var(--ink);width:96px;height:96px;border-radius:50%;
+  display:grid;place-items:center;text-align:center;font-weight:900;font-size:13px;line-height:1.2;
+  box-shadow:0 10px 34px rgba(0,0,0,.28);border:4px solid var(--paper);pointer-events:none}
+
+@media(max-width:860px){
+  .split-hero{flex-direction:column;min-height:auto}
+  .half{min-height:58vh}
+  .half .inner,.half.right .inner{margin:0;padding:0 8%;max-width:none}
+  .half h2{font-size:34px}
+  .split-hero:hover .half,.split-hero .half:hover{flex-basis:auto}
+  .split-mark{display:none}
+}
+.ph-tag{position:fixed;left:12px;bottom:16px;z-index:120;background:var(--ink);color:#fff;font-size:12px;font-weight:800;padding:6px 12px;border-radius:8px;opacity:.85}
+</style>
+</head>
+<body>
+
+<div class="ph-tag">메인 · 교체 예정</div>
+<h1 style="position:absolute;left:-9999px">무인화연구소 무인 창업 · 무인 매장 솔루션 (스터디카페·워크라운지)</h1>
+
+<nav class="nav">
+  <div class="wrap">
+    <div class="logo"><span class="mark">무인화</span>무인화연구소</div>
+    <ul class="menu">
+      <li><a href="무인화연구소-회사소개.html">회사소개</a></li>
+      <li><a href="무인화연구소-뉴스미디어.html">뉴스·미디어</a></li>
+      <li><a class="s" href="무인화연구소-솔루션.html">무인화 솔루션</a></li>
+      <li><a class="b" href="무인화연구소-창업.html">무인 창업</a></li>
+      <li><a href="무인화연구소-매장찾기.html">매장찾기</a></li>
+    </ul>
+    <div class="nav-right">
+      <span class="nav-tel">📞 1811-9544</span>
+      <a href="무인화연구소-창업.html" class="btn btn-coral">창업 상담</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== 분할 히어로 (클릭 진입) ===== -->
+<main class="split-hero">
+  <!-- 왼쪽: 무인화 솔루션 (딥그린) -->
+  <a class="half left" href="무인화연구소-솔루션.html" aria-label="무인화 솔루션 보기">
+    <div class="bgpat"></div>
+    <div class="inner">
+      <span class="eb">무인화 솔루션</span>
+      <h2>사람이 없어도<br>돌아가는 시스템.</h2>
+      <p>출입·결제·환경까지, 무인 매장을 움직이는 시스템을 직접 개발했습니다.</p>
+      <div class="tags"><span>AIoT 제어</span><span>앱 결제·출입</span><span>CCTV 관제</span><span>AI 학습관리</span></div>
+      <span class="go">솔루션 둘러보기 <span class="arrow">→</span></span>
+    </div>
+  </a>
+
+  <!-- 오른쪽: 무인 창업 (라임) -->
+  <a class="half right" href="무인화연구소-창업.html" aria-label="무인 창업 안내 보기">
+    <div class="bgpat"></div>
+    <div class="inner">
+      <span class="eb">무인 창업</span>
+      <h2>검증된 무인 사업,<br>창업으로 연결합니다.</h2>
+      <p>스터디카페부터 워크라운지까지. 인수·신규, 나에게 맞는 방식으로 시작하세요.</p>
+      <div class="tags"><span>스터디카페 인수</span><span>스터디카페 신규</span><span>워크라운지 공실 수익화</span></div>
+      <span class="go">무인 창업 시작하기 <span class="arrow">→</span></span>
+    </div>
+  </a>
+
+  <div class="split-mark">무인화<br>연구소</div>
+</main>
+
+</body>
+</html>

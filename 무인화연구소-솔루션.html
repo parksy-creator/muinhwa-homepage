@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>무인화 솔루션 | AIoT·앱 결제 출입·CCTV 관제 - 무인화연구소</title>
+<meta name="description" content="무인 매장을 움직이는 무인화연구소의 자체 개발 솔루션. AIoT 냉난방 자동제어, 앱 결제 문 출입통제, CCTV 통합 관제, AI 학습관리(모디앱)까지 무인 운영 시스템을 소개합니다.">
+<meta name="keywords" content="무인매장 솔루션,AIoT,무인 냉난방 자동제어,앱 결제 출입통제,CCTV 관제,AI 학습관리,모디앱,무인 스터디카페 시스템,무인화연구소">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://www.muinlab.io/solution">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="무인화연구소">
+<meta property="og:title" content="무인화 솔루션 | AIoT·앱 결제 출입·CCTV 관제">
+<meta property="og:description" content="무인 매장을 움직이는 자체 개발 솔루션 — AIoT 자동제어·앱 결제 출입통제·CCTV 관제.">
+<meta property="og:url" content="https://www.muinlab.io/solution">
+<meta property="og:image" content="https://www.muinlab.io/og-solution.jpg">
+<meta property="og:locale" content="ko_KR">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<style>
+:root{
+  /* 솔루션 페이지 = 딥그린 테마 (Tinker 팔레트) */
+  --green:#2E5A3E;--green-deep:#213f2c;--green-soft:#3E6B4A;
+  --cream:#e7efe5;--cream-2:#F1F1EC;--red:#e5806a;--wood:#8a6a4a;
+  --ink:#1A1E1A;--muted:#5b625a;--line:#e2e0d6;
+  --blue:#3E6B4A;--amber:#fbbf24;--lime:#C8F03C;--lime-deep:#b4e01f;--coral:#EF9A87;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Pretendard',-apple-system,BlinkMacSystemFont,'Malgun Gothic',sans-serif;color:var(--ink);background:var(--cream-2);line-height:1.65;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+.btn{display:inline-flex;align-items:center;gap:8px;font-weight:700;border-radius:999px;padding:14px 28px;font-size:15px;transition:.2s;cursor:pointer;border:none}
+.btn-green{background:var(--green);color:#fff}
+.btn-green:hover{background:var(--green-deep);transform:translateY(-2px)}
+.btn-red{background:var(--red);color:#fff}
+.btn-red:hover{background:#bd3d18;transform:translateY(-2px)}
+
+/* nav */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(241,241,236,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:19px;color:var(--green)}
+.logo .mark{width:32px;height:32px;background:var(--green);color:var(--cream);border-radius:8px;display:grid;place-items:center;font-size:11px;font-weight:900;letter-spacing:-1px}
+.menu{display:flex;gap:22px;list-style:none;align-items:center}
+.menu a{font-weight:700;font-size:14px;color:var(--ink);transition:.15s}
+.menu a:hover{color:var(--green)}
+.menu a.on{color:var(--green);border-bottom:2px solid var(--green);padding-bottom:2px}
+.nav-right{display:flex;align-items:center;gap:16px}
+.nav-tel{font-weight:800;color:var(--green);font-size:15px}
+.nav .btn{padding:10px 20px;font-size:14px}
+@media(max-width:1080px){.nav-tel{display:none}}
+@media(max-width:860px){.menu{display:none}}
+
+/* page hero */
+.phero{padding:130px 0 60px;background:linear-gradient(160deg,#3E6B4A,#2E5A3E 55%,#213f2c);color:#fff;text-align:center}
+.phero .eb{color:#d9f0d3;font-weight:800;letter-spacing:.04em;font-size:15px}
+.phero h1{font-size:46px;font-weight:900;letter-spacing:-.03em;margin-top:14px;line-height:1.2}
+.phero p{font-size:19px;color:#e7f3e5;margin-top:18px;max-width:680px;margin-left:auto;margin-right:auto}
+.phero .crumb{margin-top:22px;font-size:14px;color:#cfe4cd}
+.phero .crumb a{color:#fff;font-weight:700}
+@media(max-width:640px){.phero h1{font-size:32px}}
+
+/* 히어로 소개 영상 */
+.hero-video{max-width:900px;margin:44px auto 8px;padding:0 24px;position:relative;z-index:5}
+.vid{position:relative;aspect-ratio:16/9;border-radius:18px;overflow:hidden;background:#0e1a12;box-shadow:0 28px 66px rgba(33,63,44,.28);border:1px solid rgba(255,255,255,.08)}
+.vid iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.vid .ph-play{position:absolute;inset:0;display:grid;place-items:center;cursor:pointer;background:radial-gradient(circle at 50% 38%,#1f4a30,#0e1a12 70%)}
+.vid .ph-play .btn-play{width:84px;height:84px;border-radius:50%;background:rgba(255,255,255,.15);border:2px solid rgba(255,255,255,.75);display:grid;place-items:center;font-size:28px;color:#fff;transition:.2s}
+.vid .ph-play:hover .btn-play{transform:scale(1.08);background:rgba(255,255,255,.26)}
+.vid .lb{position:absolute;left:16px;bottom:14px;background:rgba(0,0,0,.5);color:#fff;font-size:13px;padding:6px 12px;border-radius:8px}
+.hero-video .cap{text-align:center;color:var(--muted);font-size:14px;margin-top:14px;font-weight:600}
+
+/* ===== 움직이는 목업 ===== */
+/* ① AIoT 온도 자동 슬라이더 */
+.ac-panel{text-align:center;padding:6px 4px 2px}
+.ac-sub{font-size:13px;opacity:.85}
+.ac-temp{font-size:52px;font-weight:900;line-height:1;margin:6px 0 4px}
+.ac-slider{position:relative;height:12px;border-radius:8px;background:rgba(255,255,255,.14);margin:16px 8px 0}
+.ac-fill{position:absolute;left:0;top:0;bottom:0;border-radius:8px;background:linear-gradient(90deg,#8fd0ff,#C8F03C);width:32%;transition:width .45s linear}
+.ac-thumb{position:absolute;top:50%;left:32%;transform:translate(-50%,-50%);width:30px;height:30px;border-radius:50%;background:#fff;box-shadow:0 3px 10px rgba(0,0,0,.45);display:grid;place-items:center;font-size:13px;transition:left .45s linear}
+.ac-scale{display:flex;justify-content:space-between;font-size:11px;opacity:.6;margin:8px 8px 0}
+.ac-status{margin-top:14px;font-size:13px;font-weight:800;color:#C8F03C;display:inline-flex;gap:7px;align-items:center}
+.ac-status .d{width:7px;height:7px;border-radius:50%;background:#C8F03C;animation:livePulse 1.4s infinite}
+/* ② 학습 타이머 + 적립 */
+.st-time{font-size:42px;font-weight:900;letter-spacing:1px;text-align:center;margin:8px 0 2px;font-variant-numeric:tabular-nums}
+.st-ring{height:10px;border-radius:6px;background:rgba(255,255,255,.14);overflow:hidden;margin:12px 4px 0}
+.st-ring .f{height:100%;width:0;background:linear-gradient(90deg,#5aa9ff,#C8F03C);border-radius:6px}
+.st-toast{position:absolute;left:50%;top:40%;transform:translate(-50%,-50%) scale(.6);background:#C8F03C;color:#1A1E1A;font-weight:900;font-size:22px;padding:16px 26px;border-radius:16px;box-shadow:0 14px 34px rgba(0,0,0,.45);opacity:0;pointer-events:none;transition:.35s;text-align:center;z-index:4}
+.st-toast.show{opacity:1;transform:translate(-50%,-50%) scale(1)}
+.st-toast small{display:block;font-size:12px;font-weight:700;margin-top:3px;opacity:.8}
+/* ③ 결제→문 열림 */
+.pay-stage{position:relative;min-height:200px;margin-top:6px}
+.pay-step{position:absolute;inset:0;opacity:0;transform:translateY(12px);transition:.4s;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:9px}
+.pay-step.on{opacity:1;transform:none}
+.pay-step .ic{font-size:46px}
+.pay-step .t{font-weight:900;font-size:20px}
+.pay-step .d{font-size:13px;opacity:.85}
+.pay-btn{background:#C8F03C;color:#1A1E1A;font-weight:900;padding:11px 22px;border-radius:12px;font-size:15px;margin-top:4px}
+/* ④ CCTV 스터디카페 씬 */
+.cam .scene{position:absolute;inset:0;background:linear-gradient(180deg,#26364a,#0e1620);overflow:hidden}
+.cam .desk{position:absolute;left:10%;right:10%;height:7px;background:rgba(255,255,255,.10);border-radius:3px}
+.cam .person{position:absolute;width:11px;height:11px;border-radius:50%;background:rgba(255,255,255,.5)}
+.cam .p-move{animation:walk 6s linear infinite}
+.cam.c2 .p-move{animation-duration:7.5s;animation-direction:reverse}
+.cam.c3 .p-move{animation-duration:5s}
+.cam.c4 .p-move{animation-duration:8s;animation-direction:reverse}
+@keyframes walk{0%{left:12%}50%{left:76%}100%{left:12%}}
+.cam .lb,.cam .live{position:relative;z-index:2}
+/* ⑤ 사물함 손가락 초기화 */
+.lk-stage{text-align:center;padding-top:2px}
+.lk-door{width:110px;height:140px;margin:6px auto 0;border-radius:12px;background:linear-gradient(160deg,#6b5a80,#3a3050);border:2px solid rgba(255,255,255,.2);position:relative;display:grid;place-items:center;transition:.4s}
+.lk-door.reset{background:linear-gradient(160deg,#3a4a36,#242e22);opacity:.85}
+.lk-door .num{font-weight:900;font-size:22px}
+.lk-door .lock{position:absolute;right:10px;top:50%;transform:translateY(-50%);font-size:18px}
+.lk-reset-btn{margin-top:16px;display:inline-block;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);border-radius:12px;padding:12px 22px;font-weight:800;font-size:14px;position:relative}
+.finger{position:absolute;font-size:30px;left:50%;bottom:-34px;transform:translateX(-50%);animation:tap 2.4s ease-in-out infinite}
+@keyframes tap{0%,100%{transform:translateX(-50%) translateY(0)}42%,52%{transform:translateX(-50%) translateY(-28px)}}
+.lk-status{margin-top:16px;font-size:14px;font-weight:800;color:#C8F03C;min-height:20px}
+
+/* 솔루션 인덱스 (스마트싱스 상단 칩) */
+.solnav{position:sticky;top:64px;z-index:80;background:var(--cream);border-bottom:1px solid var(--line)}
+.solnav .wrap{display:flex;gap:10px;overflow-x:auto;padding:14px 24px}
+.solnav a{flex:none;background:#fff;border:1px solid var(--line);border-radius:999px;padding:10px 18px;font-weight:700;font-size:14px;color:var(--ink);transition:.2s}
+.solnav a:hover{border-color:var(--green);color:var(--green)}
+
+/* feature block */
+.feat{padding:96px 0;scroll-margin-top:130px}
+.feat .grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.feat.rev .txt{order:2}
+.feat .kick{display:inline-flex;align-items:center;gap:8px;font-weight:800;font-size:14px;padding:7px 14px;border-radius:999px;background:var(--cream);color:var(--green);margin-bottom:18px}
+.feat h2{font-size:34px;font-weight:900;line-height:1.3;letter-spacing:-.02em}
+.feat .desc{color:var(--muted);font-size:17px;margin-top:16px}
+.feat ul{margin-top:24px;display:grid;gap:12px}
+.feat li{list-style:none;display:flex;gap:10px;align-items:flex-start;font-weight:600;font-size:15.5px}
+.feat li::before{content:"✓";color:var(--green);font-weight:900;flex:none}
+.feat .stat-row{display:flex;gap:28px;margin-top:26px;flex-wrap:wrap}
+.feat .st .v{font-size:30px;font-weight:900;color:var(--red);line-height:1}
+.feat .st .k{color:var(--muted);font-size:13px;font-weight:700;margin-top:4px}
+@media(max-width:860px){.feat .grid{grid-template-columns:1fr;gap:34px}.feat.rev .txt{order:0}.feat h2{font-size:27px}}
+
+/* phone mockup visual */
+.device{border-radius:26px;min-height:440px;position:relative;overflow:hidden;padding:26px;color:#fff;box-shadow:0 24px 60px rgba(46,66,49,.28)}
+.dev-aiot{background:linear-gradient(160deg,#2E4231,#1c2a1e)}
+.dev-modi{background:linear-gradient(160deg,#3b5566,#20313b)}
+.dev-lock{background:linear-gradient(160deg,#7a3b28,#3a1d14)}
+.dev-locker{background:linear-gradient(160deg,#5a4a6b,#2c2338)}
+.dev-cctv{background:linear-gradient(160deg,#2b3540,#12181d)}
+.soon-badge{display:inline-block;background:var(--amber);color:#5a4300;font-weight:800;font-size:12px;padding:4px 11px;border-radius:999px;margin-left:8px;vertical-align:middle}
+.feat.soon .device{opacity:.9}
+.cam-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+.cam{border:1px solid rgba(255,255,255,.14);border-radius:10px;min-height:110px;position:relative;overflow:hidden;background:#0e1620 center/cover no-repeat;filter:saturate(.72) contrast(1.06) brightness(.97)}
+.cam::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(18,36,54,.2),rgba(10,18,30,.34))}
+.cam .ch{position:absolute;top:6px;left:8px;z-index:3;font-size:11px;font-weight:800;color:#fff;text-shadow:0 1px 2px rgba(0,0,0,.85)}
+.cam .ts{position:absolute;top:6px;right:8px;z-index:3;font-size:10px;color:#fff;text-shadow:0 1px 2px rgba(0,0,0,.85);font-variant-numeric:tabular-nums}
+.cam .live{position:absolute;bottom:6px;left:8px;z-index:3;font-size:9px;font-weight:800;color:#ff6b5a;text-shadow:0 1px 2px rgba(0,0,0,.85);animation:livePulse 1.6s ease-in-out infinite}
+.cam::after{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(120deg,transparent 44%,rgba(255,255,255,.12) 50%,transparent 56%);transform:translateX(-100%);animation:scan 3.4s linear infinite}
+/* CCTV 속 사람 실루엣 (들어오고/나가고/앉기) */
+.fig{position:absolute;z-index:2;pointer-events:none;width:13px;filter:blur(.3px)}
+.fig .h{display:block;width:8px;height:8px;border-radius:50%;background:rgba(10,12,18,.82);margin:0 auto 1px}
+.fig .b{display:block;width:13px;height:19px;border-radius:6px 6px 3px 3px;background:rgba(10,12,18,.8);margin:0 auto}
+.fig.walk{animation:walkLR 8s linear infinite}
+.fig.walk.slow{animation-duration:11s}
+.fig.walk.rev{animation-name:walkRL}
+.fig.walk.d2{animation-delay:3s}.fig.walk.d4{animation-delay:5.5s}
+.fig.sit{animation:sway 3.6s ease-in-out infinite}
+@keyframes walkLR{0%{left:-10%;opacity:0}7%{opacity:.9}90%{left:95%;opacity:.9}100%{left:102%;opacity:0}}
+@keyframes walkRL{0%{left:95%;opacity:0}7%{opacity:.9}90%{left:-8%;opacity:.9}100%{left:-12%;opacity:0}}
+@keyframes sway{0%,100%{transform:rotate(-1.5deg)}50%{transform:rotate(1.5deg)}}
+.cam.c2::after{animation-delay:.8s}.cam.c3::after{animation-delay:1.6s}.cam.c4::after{animation-delay:2.4s}
+@keyframes livePulse{0%,100%{opacity:1}50%{opacity:.28}}
+@keyframes scan{0%{transform:translateX(-100%)}60%,100%{transform:translateX(100%)}}
+/* 타임라인 (재생/스크러버) */
+.timeline{margin-top:12px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:12px;padding:14px 16px}
+.tl-head{display:flex;justify-content:space-between;font-size:12px;opacity:.85}
+.tl-track{position:relative;height:8px;border-radius:6px;background:rgba(255,255,255,.16);margin:22px 0 6px}
+.tl-fill{position:absolute;left:0;top:0;bottom:0;border-radius:6px;background:linear-gradient(90deg,#C8F03C,#b4e01f);width:38%;animation:tlfill 9s linear infinite}
+.tl-scrub{position:absolute;top:50%;width:15px;height:15px;border-radius:50%;background:#fff;border:3px solid #b4e01f;transform:translate(-50%,-50%);left:38%;animation:tlscrub 9s linear infinite;box-shadow:0 0 10px rgba(200,240,60,.95)}
+.tl-motion{position:absolute;top:-20px;left:62%;font-size:10px;font-weight:800;color:#fbbf24;white-space:nowrap;transform:translateX(-50%)}
+.tl-motion::after{content:"";position:absolute;left:50%;top:15px;width:2px;height:9px;background:#fbbf24;transform:translateX(-50%)}
+@keyframes tlscrub{0%{left:5%}100%{left:96%}}
+@keyframes tlfill{0%{width:5%}100%{width:96%}}
+.tl-labels{display:flex;justify-content:space-between;font-size:11px;opacity:.55}
+.tl-ctrls{display:flex;align-items:center;gap:16px;margin-top:12px;font-size:15px}
+.tl-ctrls .rec{margin-left:auto;font-size:11px;font-weight:800;color:#ff6b5a;display:flex;align-items:center;gap:5px}
+.tl-ctrls .rec .d{width:7px;height:7px;border-radius:50%;background:#ff6b5a;animation:livePulse 1.6s infinite}
+.cctv-bar{display:flex;justify-content:space-between;align-items:center}
+.cctv-ctrls{display:flex;gap:8px}
+.cctv-ctrls i{width:26px;height:22px;border-radius:6px;background:rgba(255,255,255,.1);display:grid;place-items:center;font-style:normal;font-size:12px}
+.cctv-ctrls i.on{background:rgba(200,240,60,.55);color:#1A1E1A}
+.dev-top{display:flex;justify-content:space-between;font-size:12px;opacity:.8;margin-bottom:16px}
+.dev-h{font-weight:800;font-size:15px;opacity:.95}
+.dcard{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.16);border-radius:16px;padding:16px;margin-top:12px}
+.dcard .r1{display:flex;justify-content:space-between;align-items:center}
+.dcard .big{font-size:26px;font-weight:900}
+.dcard .lb{font-size:13px;opacity:.85}
+.badge-ai{display:inline-block;background:rgba(74,107,78,.9);color:#eafbe6;font-size:12px;font-weight:800;padding:4px 10px;border-radius:999px;margin-top:8px}
+.pill{display:inline-block;font-size:12px;font-weight:800;padding:4px 10px;border-radius:999px}
+.pill-blue{background:rgba(200,240,60,.28);color:#eaf7bf}
+.pill-red{background:rgba(217,72,31,.3);color:#ffd9c9}
+.pill-green{background:rgba(74,107,78,.4);color:#d9f0d3}
+.pill-amber{background:rgba(251,191,36,.25);color:#ffe9b0}
+.dev-note{position:absolute;left:18px;bottom:14px;background:rgba(0,0,0,.4);font-size:12px;padding:5px 10px;border-radius:8px}
+
+/* CTA */
+.cta-band{background:var(--green);color:#fff;text-align:center;padding:80px 0}
+.cta-band h2{font-size:32px;font-weight:900}
+.cta-band p{color:#d9f0d3;margin-top:12px;font-size:17px}
+.cta-band .btns{margin-top:28px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.cta-band .btn-white{background:#fff;color:var(--green-deep)}
+
+.foot{background:var(--green-deep);color:#c9d3c4;padding:44px 0;font-size:14px}
+.foot .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.foot .logo{color:#fff}
+.ph-tag{position:fixed;left:12px;bottom:22px;z-index:120;background:var(--red);color:#fff;font-size:12px;font-weight:800;padding:6px 12px;border-radius:8px;opacity:.9}
+</style>
+</head>
+<body>
+
+<div class="ph-tag">솔루션 페이지 · 내용 교체 예정</div>
+
+<nav class="nav">
+  <div class="wrap">
+    <a class="logo" href="index.html"><span class="mark">무인화</span>무인화연구소</a>
+    <ul class="menu">
+      <li><a href="무인화연구소-회사소개.html">회사소개</a></li>
+      <li><a href="무인화연구소-뉴스미디어.html">뉴스·미디어</a></li>
+      <li><a class="on" href="무인화연구소-솔루션.html">무인화 솔루션</a></li>
+      <li><a href="무인화연구소-창업.html">무인 창업</a></li>
+      <li><a href="무인화연구소-매장찾기.html">매장찾기</a></li>
+    </ul>
+    <div class="nav-right">
+      <span class="nav-tel">📞 1811-9544</span>
+      <a href="무인화연구소-창업.html" class="btn btn-green">창업 상담</a>
+    </div>
+  </div>
+</nav>
+
+<!-- 페이지 히어로 -->
+<header class="phero">
+  <div class="wrap">
+    <div class="eb">무인화 솔루션</div>
+    <h1>사장님이 없어도,<br>매장은 알아서 돌아갑니다.</h1>
+    <p>출입·결제·온도·CCTV까지 — 무인 매장 운영에 꼭 필요한 걸 앱 하나에 담았습니다. 손은 덜 가고, 매출은 안 새게.</p>
+    <div class="crumb"><a href="index.html">홈</a> › 무인화 솔루션</div>
+  </div>
+</header>
+
+<!-- 히어로 소개 영상 -->
+<div class="hero-video">
+  <div class="vid">
+    <!-- ▼ 실제 연결: 아래 iframe 주석을 풀고 VIDEO_ID를 유튜브 영상 ID로 교체하세요
+    <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="무인화 솔루션 소개 영상" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    -->
+    <div class="ph-play" onclick="alert('유튜브 영상 URL 연결 후 재생됩니다. (코드의 iframe 주석 해제 + VIDEO_ID 교체)')">
+      <div class="btn-play">▶</div>
+      <span class="lb">무인화 솔루션 소개 영상 · 유튜브 임베드 (교체 예정)</span>
+    </div>
+  </div>
+  <p class="cap">▶ 3분 만에 보는 무인화연구소의 무인 운영 시스템</p>
+</div>
+
+<!-- 솔루션 인덱스 -->
+<div class="solnav">
+  <div class="wrap">
+    <a href="#aiot">① AIoT 자동 제어</a>
+    <a href="#modi">② AI 학습관리</a>
+    <a href="#lock">③ 앱 결제·출입통제</a>
+    <a href="#cctv">④ CCTV 관제</a>
+    <a href="#locker">⑤ 스마트 사물함 (예정)</a>
+  </div>
+</div>
+
+<!-- ① AIoT -->
+<section class="feat" id="aiot">
+  <div class="wrap">
+    <div class="grid">
+      <div class="txt">
+        <span class="kick">① 자동 온도 케어</span>
+        <h2>온도 신경 쓰기,<br>이제 그만하셔도 돼요.</h2>
+        <p class="desc">여름엔 덥다, 겨울엔 춥다 — 매장 온도 민원까지 챙기기 힘드셨죠? 목표 온도만 정해두면 AI가 알아서 켜고 끕니다. 전기세는 아끼고, 손님은 늘 쾌적하게.</p>
+        <ul>
+          <li>목표 온도만 설정 → AI가 24시간 자동으로 켜고 끔</li>
+          <li>사장님이 직접 손댈 일이 거의 없어요</li>
+          <li>안 쓰는 시간엔 알아서 꺼서 <b>전기세 절감</b></li>
+          <li>가장 더운 자리 기준 · 무풍으로 늘 쾌적하게</li>
+        </ul>
+        <div class="stat-row">
+          <div class="st"><div class="v">−18%</div><div class="k">전기세 절감(예시)</div></div>
+          <div class="st"><div class="v">하루 0분</div><div class="k">온도 관리 시간</div></div>
+        </div>
+      </div>
+      <div class="device dev-aiot">
+        <div class="dev-top"><span>강일동점 · 스터디존</span><span>🤖 AI 자동</span></div>
+        <div class="ac-panel">
+          <div class="ac-sub">AI가 목표 24°에 맞추는 중…</div>
+          <div class="ac-temp" id="acTemp">27.4°</div>
+          <div class="ac-slider"><div class="ac-fill" id="acFill"></div><div class="ac-thumb" id="acThumb">🌡️</div></div>
+          <div class="ac-scale"><span>22°</span><span>목표 24°</span><span>30°</span></div>
+          <div class="ac-status"><span class="d"></span><span id="acCur">AI 자동 냉방 중</span></div>
+        </div>
+        <div class="dcard" style="margin-top:16px"><div class="r1"><span class="lb">이번 달 전기세</span><span class="pill pill-green">−18% ▼</span></div></div>
+        <div class="dev-note">AI 자동 온도 제어 · 앤딩 AIoT 기반</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ② AI 학습관리 (모디앱) -->
+<section class="feat rev" id="modi" style="background:var(--cream)">
+  <div class="wrap">
+    <div class="grid">
+      <div class="txt">
+        <span class="kick">② AI 학습관리 · 모디앱</span>
+        <h2>학생이 계속<br>찾아오게 만드는 법.</h2>
+        <p class="desc">공부한 시간이 앱에 차곡차곡 쌓이고, 1시간을 채우면 포인트로 적립돼요. '조금만 더 있자'는 마음이 재방문과 체류시간을 늘립니다.</p>
+        <ul>
+          <li>학습 시간 · 출석 자동 기록</li>
+          <li>1시간마다 <b>포인트 적립</b> — 다시 오고 싶은 이유</li>
+          <li>체류시간 · 재방문율 상승 → 매출로 연결</li>
+          <li>학부모 리포트로 신뢰까지 (선택)</li>
+        </ul>
+      </div>
+      <div class="device dev-modi">
+        <div class="dev-top"><span>모디앱 · 학습 타이머</span><span>A-12 · 창가</span></div>
+        <div class="dev-h">📚 오늘 공부한 시간</div>
+        <div class="st-time" id="stTime">00:00:00</div>
+        <div class="st-ring"><div class="f" id="stFill"></div></div>
+        <div class="lb" style="text-align:center;opacity:.8;font-size:13px;margin-top:8px">1시간 채울 때마다 자동 적립</div>
+        <div class="dcard" style="margin-top:16px"><div class="r1"><span class="lb">🪙 적립 포인트</span><span class="big" style="font-size:20px" id="stPts">1,250원</span></div></div>
+        <div class="st-toast" id="stToast">＋50원 적립!<small>1시간 달성 🎉</small></div>
+        <div class="dev-note">공부한 만큼 쌓이는 리워드 · 모디앱</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ③ 앱 결제·출입통제 -->
+<section class="feat" id="lock">
+  <div class="wrap">
+    <div class="grid">
+      <div class="txt">
+        <span class="kick">③ 앱 결제 · 문 출입</span>
+        <h2>결제 안 하면,<br>문이 안 열립니다.</h2>
+        <p class="desc">무인 매장에서 제일 걱정되는 건 '결제 안 하고 들어가는 손님'이죠. 앱으로 결제해야 문이 열려서, 매출 샐 걱정 없이 사람 없이 돌아갑니다.</p>
+        <ul>
+          <li>앱 결제 완료 → 문 자동 개방 (비대면 입장)</li>
+          <li>결제 없는 입실 원천 차단 = <b>매출 누수 0</b></li>
+          <li>누가 언제 들어왔는지 출입 기록 자동 저장</li>
+          <li>스터디카페 · 워크라운지 공통 적용</li>
+        </ul>
+        <div class="stat-row">
+          <div class="st"><div class="v">0건</div><div class="k">무단 입실</div></div>
+          <div class="st"><div class="v">100%</div><div class="k">비대면 자동 입장</div></div>
+        </div>
+      </div>
+      <div class="device dev-lock">
+        <div class="dev-top"><span>앤딩 앱 · 입장</span><span>강일동점</span></div>
+        <div class="pay-stage">
+          <div class="pay-step on"><div class="ic">🎫</div><div class="t">4시간권 · 6,000원</div><div class="d">이용권을 선택했어요</div><div class="pay-btn">💳 결제하기</div></div>
+          <div class="pay-step"><div class="ic">✅</div><div class="t">결제 완료</div><div class="d">잠시만요, 문을 여는 중…</div></div>
+          <div class="pay-step"><div class="ic">🚪</div><div class="t">문 열림 · 입장!</div><div class="d">결제한 사람만 들어갑니다</div></div>
+        </div>
+        <div class="dev-note">앱 결제 → 문 열림 · 무단입실 0</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ④ CCTV 관제 -->
+<section class="feat rev" id="cctv" style="background:var(--cream)">
+  <div class="wrap">
+    <div class="grid">
+      <div class="txt">
+        <span class="kick">④ CCTV 관제</span>
+        <h2>매장에 없을 때가<br>제일 불안하잖아요.</h2>
+        <p class="desc">4대 카메라를 폰으로 한 번에. 이상하면 바로 확인하고, 지난 영상 다시보기까지. 사장님이 어디에 있든 매장이 눈앞에 있어요.</p>
+        <ul>
+          <li>실시간 4채널을 폰·PC로 원격 확인</li>
+          <li>여러 매장도 <b>한 화면에서 통합 관제</b></li>
+          <li>이상 감지 알림 · 녹화 영상 다시보기</li>
+          <li>분쟁·사고 시 근거 영상 확보</li>
+        </ul>
+        <div class="stat-row">
+          <div class="st"><div class="v">24시간</div><div class="k">무인 관제</div></div>
+          <div class="st"><div class="v">어디서든</div><div class="k">폰으로 확인</div></div>
+        </div>
+      </div>
+      <div class="device dev-cctv">
+        <div class="cctv-bar">
+          <span class="dev-h">📹 CCTV 관제 · 강일동점</span>
+          <span class="cctv-ctrls"><i>▤</i><i class="on">▦</i><i>⚙</i></span>
+        </div>
+        <div class="cam-grid">
+          <div class="cam c1" style="background-image:url('assets/cctv1.jpg')">
+            <span class="fig walk" style="bottom:24%"><span class="h"></span><span class="b"></span></span>
+            <span class="fig sit" style="left:58%;bottom:34%"><span class="h"></span><span class="b"></span></span>
+            <span class="ch">CH1 노트북존</span><span class="ts">17:22:18</span><span class="live">● REC</span></div>
+          <div class="cam c2" style="background-image:url('assets/cctv2.jpg')">
+            <span class="fig walk rev slow" style="bottom:20%"><span class="h"></span><span class="b"></span></span>
+            <span class="fig sit" style="left:30%;bottom:30%"><span class="h"></span><span class="b"></span></span>
+            <span class="fig sit" style="left:64%;bottom:38%;transform:scale(.85)"><span class="h"></span><span class="b"></span></span>
+            <span class="ch">CH2 스터디존</span><span class="ts">17:22:18</span><span class="live">● REC</span></div>
+          <div class="cam c3" style="background-image:url('assets/cctv3.jpg')">
+            <span class="fig walk d2" style="bottom:26%"><span class="h"></span><span class="b"></span></span>
+            <span class="ch">CH3 고정석</span><span class="ts">17:22:18</span><span class="live">● REC</span></div>
+          <div class="cam c4" style="background-image:url('assets/cctv4.jpg')">
+            <span class="fig sit" style="left:46%;bottom:22%"><span class="h"></span><span class="b"></span></span>
+            <span class="fig walk rev d4" style="bottom:30%"><span class="h"></span><span class="b"></span></span>
+            <span class="ch">CH4 1인실</span><span class="ts">17:22:18</span><span class="live">● REC</span></div>
+        </div>
+        <div class="timeline">
+          <div class="tl-head"><span>지난 1시간 다시보기</span><span>0:37 / LIVE</span></div>
+          <div class="tl-track">
+            <div class="tl-fill"></div>
+            <span class="tl-motion">● 이상 감지</span>
+            <span class="tl-scrub"></span>
+          </div>
+          <div class="tl-labels"><span>14:00</span><span>14:30</span><span>15:00</span></div>
+          <div class="tl-ctrls">
+            <span>⏸</span><span>◀◀</span><span>▶▶</span>
+            <span class="rec"><span class="d"></span>REC</span>
+          </div>
+        </div>
+        <div class="dev-note">실제 매장 CCTV 화면 · 라이브 연동 시 실시간 영상</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ⑤ 스마트 사물함 (예정) -->
+<section class="feat soon" id="locker">
+  <div class="wrap">
+    <div class="grid">
+      <div class="txt">
+        <span class="kick">⑤ 스마트 사물함</span><span class="soon-badge">준비 중 · 예정</span>
+        <h2>사물함 열쇠 분실 연락,<br>이제 안 받아요.</h2>
+        <p class="desc">손님이 폰으로 열고 잠그고, 이용이 끝나면 손가락 한 번으로 초기화돼요. 열쇠·번호키 관리 부담이 사라집니다.</p>
+        <ul>
+          <li>폰으로 사물함 배정 · 개폐</li>
+          <li>이용 종료 시 <b>손가락 한 번으로 초기화</b></li>
+          <li>분실 열쇠 · 비밀번호 관리 0</li>
+          <li>이용 현황을 관리자 앱에서 한눈에</li>
+        </ul>
+        <p class="desc" style="font-size:14px">* 스마트 사물함은 현재 개발 중이며, 실제 사양으로 교체 예정입니다.</p>
+      </div>
+      <div class="device dev-locker">
+        <div class="dev-top"><span>앤딩 앱 · 내 사물함</span><span>2층 스터디존</span></div>
+        <div class="dev-h" style="text-align:center">🔒 스마트 사물함</div>
+        <div class="lk-stage">
+          <div class="lk-door" id="lkDoor"><span class="num">B-07</span><span class="lock" id="lkLock">🔒</span></div>
+          <div class="lk-reset-btn">♻️ 이용 종료 · 초기화<span class="finger">👆</span></div>
+          <div class="lk-status" id="lkStatus">사용 중 · 잠금</div>
+        </div>
+        <div class="dev-note">손가락 한 번으로 초기화 (준비 중)</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-band">
+  <div class="wrap">
+    <h2>이 시스템이 들어간 매장으로,<br>무인 창업을 시작하세요.</h2>
+    <p>솔루션은 앤딩스터디카페 · 앤딩워크라운지 매장에 그대로 적용됩니다.</p>
+    <div class="btns">
+      <a href="무인화연구소-창업.html" class="btn btn-white">무인 창업 알아보기 →</a>
+      <a href="무인화연구소-창업.html" class="btn btn-red">창업 상담 신청</a>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap">
+    <div>
+      <div class="logo"><span class="mark">무인화</span>무인화연구소</div>
+      <p style="margin-top:12px">무인 공간, 만드는 것부터 운영까지</p>
+    </div>
+    <div>
+      <p style="font-size:14px;line-height:1.9">(주)무인화연구소&nbsp; ·&nbsp; 서울 올림픽로32길 32, 305호&nbsp; ·&nbsp; 가맹문의 1811-9544&nbsp; ·&nbsp; biz@muinlab.io</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ① AIoT 온도 자동 조절 (27.4° → 목표 24° 왕복) */
+(function(){
+  var temp=document.getElementById('acTemp'),thumb=document.getElementById('acThumb'),
+      fill=document.getElementById('acFill'),cur=document.getElementById('acCur');
+  if(!temp)return;
+  var t=27.4,target=24.0,cooling=true,hold=0;
+  function pct(v){var p=(30-v)/(30-22)*100;return Math.max(6,Math.min(94,p));}
+  setInterval(function(){
+    if(cooling){t-=0.2;if(t<=target){t=target;cooling=false;hold=7;}}
+    else{hold--;if(hold<=0){t=27.4;cooling=true;}}
+    temp.textContent=t.toFixed(1)+'°';
+    var p=pct(t);thumb.style.left=p+'%';fill.style.width=p+'%';
+    cur.textContent=cooling?'AI 자동 냉방 중':'목표 도달 · 대기';
+  },450);
+})();
+
+/* ② 학습 타이머 + 1시간마다 50원 적립 */
+(function(){
+  var el=document.getElementById('stTime'),f=document.getElementById('stFill'),
+      toast=document.getElementById('stToast'),pts=document.getElementById('stPts');
+  if(!el)return;
+  var sec=0,total=1250;
+  function fmt(s){var h=Math.floor(s/3600),m=Math.floor(s%3600/60),x=s%60;
+    return ('0'+h).slice(-2)+':'+('0'+m).slice(-2)+':'+('0'+x).slice(-2);}
+  setInterval(function(){
+    sec+=95;
+    if(sec>=3600){
+      sec=0;total+=50;
+      if(pts)pts.textContent=total.toLocaleString()+'원';
+      if(toast){toast.classList.add('show');setTimeout(function(){toast.classList.remove('show');},1500);}
+    }
+    el.textContent=fmt(sec);
+    f.style.width=(sec/3600*100)+'%';
+  },70);
+})();
+
+/* ③ 결제 → 문 열림 3단계 순환 */
+(function(){
+  var steps=document.querySelectorAll('.pay-step');
+  if(!steps.length)return;
+  var i=0;
+  setInterval(function(){
+    steps.forEach(function(s,k){s.classList.toggle('on',k===i);});
+    i=(i+1)%steps.length;
+  },1600);
+})();
+
+/* ⑤ 사물함 손가락 초기화 (사용중 ↔ 초기화 완료) */
+(function(){
+  var st=document.getElementById('lkStatus'),door=document.getElementById('lkDoor'),lock=document.getElementById('lkLock');
+  if(!st)return;
+  var reset=false;
+  setInterval(function(){
+    reset=!reset;
+    if(reset){st.textContent='♻️ 초기화 완료 · 반환됨';door.classList.add('reset');if(lock)lock.textContent='🔓';}
+    else{st.textContent='사용 중 · 잠금';door.classList.remove('reset');if(lock)lock.textContent='🔒';}
+  },2400);
+})();
+</script>
+
+</body>
+</html>
