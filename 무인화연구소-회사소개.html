@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>회사소개 | 무인화연구소</title>
-<meta name="description" content="무인화연구소는 무인 매장 시스템을 직접 개발하고 직영으로 검증한 뒤 프랜차이즈로 확장하는 무인 공간 사업 본부입니다. 대표 인사말·회사 개요·연혁·오시는 길을 안내합니다.">
+<meta name="description" content="무인화연구소는 무인 매장 시스템을 직접 개발하고 직영으로 검증한 뒤 프랜차이즈로 확장하는 무인 공간 사업 본부입니다. 대표 인사말·일하는 방식·연혁을 안내합니다.">
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://www.muinlab.io/about">
 <meta property="og:type" content="website"><meta property="og:site_name" content="무인화연구소">
@@ -46,12 +46,6 @@ a{text-decoration:none;color:inherit}
 .ceo .sign{margin-top:22px;font-weight:800}
 .ceo .sign b{font-size:19px}
 @media(max-width:760px){.ceo{grid-template-columns:1fr;gap:24px}.ceo .photo{max-width:260px;margin:0 auto}}
-/* 개요 표 */
-.info{max-width:760px;margin:0 auto;background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden}
-.info .row{display:flex;border-bottom:1px solid var(--line)}.info .row:last-child{border-bottom:none}
-.info .k{flex:none;width:150px;background:var(--paper);font-weight:800;padding:16px 20px;font-size:14px}
-.info .v{padding:16px 20px;font-size:15px}
-@media(max-width:560px){.info .k{width:110px}}
 /* 비전 카드 */
 .vgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
 .vcard{background:#fff;border:1px solid var(--line);border-radius:18px;padding:30px 26px}
@@ -65,11 +59,6 @@ a{text-decoration:none;color:inherit}
 .hrow::before{content:"";position:absolute;left:8px;top:4px;width:14px;height:14px;border-radius:50%;background:var(--green);border:3px solid var(--paper)}
 .hrow .y{font-weight:900;color:var(--green)}
 .hrow .t{margin-top:2px;color:var(--muted)}
-/* 오시는 길 */
-.map{aspect-ratio:16/7;border-radius:18px;background:linear-gradient(135deg,#cfd8cb,#9aa88f 60%,#6f7d63);position:relative;overflow:hidden;border:1px solid var(--line)}
-.map .pin{position:absolute;left:50%;top:46%;transform:translate(-50%,-50%);font-size:40px}
-.map span.lb{position:absolute;left:16px;bottom:14px;background:rgba(0,0,0,.45);color:#fff;font-size:13px;padding:6px 12px;border-radius:8px}
-.addr{margin-top:20px;font-size:16px;font-weight:600}
 .cta{background:var(--green);color:#fff;text-align:center;padding:70px 0}
 .cta h2{font-size:28px;font-weight:900}.cta .tel{margin-top:14px;font-size:22px;font-weight:900;color:var(--lime)}
 .cta .btn{margin-top:22px;background:var(--lime);color:var(--ink)}
@@ -113,21 +102,8 @@ a{text-decoration:none;color:inherit}
   </div>
 </div></section>
 
-<!-- 회사 개요 -->
-<section class="sec" style="background:#fff"><div class="wrap">
-  <div class="sec-head"><div class="eb">Company</div><h2>회사 개요</h2></div>
-  <div class="info">
-    <div class="row"><div class="k">상호</div><div class="v">(주)무인화연구소</div></div>
-    <div class="row"><div class="k">대표</div><div class="v">박소영</div></div>
-    <div class="row"><div class="k">사업자등록번호</div><div class="v">511-81-27401</div></div>
-    <div class="row"><div class="k">본사</div><div class="v">서울 올림픽로32길 32, 305호</div></div>
-    <div class="row"><div class="k">사업 분야</div><div class="v">무인 공간 프랜차이즈 · 무인 운영 솔루션 개발 (스터디카페 · 워크라운지 외)</div></div>
-    <div class="row"><div class="k">가맹 문의</div><div class="v">1811-9544 · biz@muinlab.io</div></div>
-  </div>
-</div></section>
-
 <!-- 비전 -->
-<section class="sec"><div class="wrap">
+<section class="sec" style="background:#fff"><div class="wrap">
   <div class="sec-head"><div class="eb">Why us</div><h2>무인화연구소가 일하는 방식</h2></div>
   <div class="vgrid">
     <div class="vcard"><div class="ic">🛠️</div><h4>기술을 직접 개발</h4><p>출입·결제·AIoT·CCTV까지 외주가 아닌 자체 개발. 문제가 생겨도 본부가 바로 대응합니다.</p></div>
@@ -137,7 +113,7 @@ a{text-decoration:none;color:inherit}
 </div></section>
 
 <!-- 연혁 -->
-<section class="sec" style="background:#fff"><div class="wrap">
+<section class="sec"><div class="wrap">
   <div class="sec-head"><div class="eb">History</div><h2>걸어온 길</h2></div>
   <div class="hist">
     <div class="hrow"><div class="y">2022. 11</div><div class="t">무인화연구소 창업 · 무인 공간 사업 시작</div></div>
@@ -147,13 +123,6 @@ a{text-decoration:none;color:inherit}
     <div class="hrow"><div class="y">앤딩워크라운지</div><div class="t">앤딩워크라운지 브랜드 런칭 · 공실 수익화 모델 확장</div></div>
   </div>
   <p style="text-align:center;margin-top:16px;color:var(--muted);font-size:14px">* 브랜드별 런칭 시점(연·월)은 확정 후 표기 예정입니다.</p>
-</div></section>
-
-<!-- 오시는 길 -->
-<section class="sec"><div class="wrap">
-  <div class="sec-head"><div class="eb">Location</div><h2>오시는 길</h2></div>
-  <div class="map"><div class="pin">📍</div><span class="lb">지도 임베드 (네이버/구글 지도 · 연동 예정)</span></div>
-  <div class="addr">📍 서울 올림픽로32길 32, 305호 · 무인화연구소 본사</div>
 </div></section>
 
 <section class="cta"><div class="wrap">
