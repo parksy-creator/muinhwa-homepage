@@ -201,6 +201,70 @@ a{text-decoration:none;color:inherit}
 .pill-amber{background:rgba(251,191,36,.25);color:#ffe9b0}
 .dev-note{position:absolute;left:18px;bottom:14px;background:rgba(0,0,0,.4);font-size:12px;padding:5px 10px;border-radius:8px}
 
+/* ===== 매장 유형별 솔루션 패키지 ===== */
+.pkg{padding:84px 0 90px;background:#fff;border-top:1px solid var(--line)}
+.pkg .head{text-align:center;margin-bottom:44px}
+.pkg .head .eb{color:var(--red);font-weight:800;font-size:14px;letter-spacing:.06em}
+.pkg .head h2{font-size:32px;font-weight:900;letter-spacing:-.02em;margin-top:8px;line-height:1.3}
+.pkg .head p{color:var(--muted);font-size:16px;margin-top:12px}
+.pkg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+@media(max-width:900px){.pkg-grid{grid-template-columns:1fr;max-width:520px;margin:0 auto}}
+.pkg-card{background:var(--cream-2);border:1px solid var(--line);border-radius:20px;padding:30px 26px 26px;display:flex;flex-direction:column;transition:.2s}
+.pkg-card:hover{border-color:var(--green-soft);transform:translateY(-3px);box-shadow:0 16px 40px rgba(33,63,44,.1)}
+.pkg-card .tag{display:inline-block;align-self:flex-start;background:var(--green);color:#fff;font-size:12px;font-weight:800;padding:5px 12px;border-radius:999px;letter-spacing:.02em}
+.pkg-card.b .tag{background:var(--lime-deep);color:var(--ink)}
+.pkg-card.c .tag{background:var(--red)}
+.pkg-card h3{font-size:21px;font-weight:900;margin-top:16px;letter-spacing:-.02em}
+.pkg-card .desc{color:var(--muted);font-size:14px;margin-top:8px;min-height:44px}
+.pkg-list{list-style:none;margin-top:20px;padding-top:18px;border-top:1px solid var(--line);flex:1}
+.pkg-list li{font-size:14.5px;font-weight:600;padding:7px 0 7px 26px;position:relative}
+.pkg-list li::before{content:"✓";position:absolute;left:0;top:7px;color:var(--green);font-weight:900}
+.pkg-list li.off{color:#9aa295;font-weight:500}
+.pkg-list li.off::before{content:"−";color:#c3cbc0}
+.pkg-cta{margin-top:22px;display:flex;align-items:center;justify-content:center;gap:8px;background:#fff;border:1.5px solid var(--green);color:var(--green);font-weight:800;font-size:14.5px;padding:13px 18px;border-radius:999px;transition:.18s}
+.pkg-cta:hover{background:var(--green);color:#fff}
+.pkg-note{text-align:center;color:var(--muted);font-size:13.5px;margin-top:26px}
+
+/* ===== 도입 상담 (폼 + 전화) ===== */
+.lead{padding:84px 0 90px;background:var(--cream-2)}
+.lead-grid{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:start}
+@media(max-width:900px){.lead-grid{grid-template-columns:1fr;gap:30px}}
+.lead .eb{color:var(--red);font-weight:800;font-size:14px;letter-spacing:.06em}
+.lead h2{font-size:31px;font-weight:900;letter-spacing:-.02em;margin-top:8px;line-height:1.32}
+.lead .copy>p{color:var(--muted);font-size:16px;margin-top:14px}
+.lead-tel{margin-top:28px;background:var(--green);color:#fff;border-radius:20px;padding:26px 28px}
+.lead-tel .k{font-size:13px;font-weight:800;color:#cfe9d3;letter-spacing:.04em}
+.lead-tel .v{font-size:32px;font-weight:900;margin-top:6px;letter-spacing:-.02em}
+.lead-tel .t{font-size:13.5px;color:#d9f0d3;margin-top:10px;line-height:1.6}
+.lead-form{background:#fff;border:1px solid var(--line);border-radius:22px;padding:30px 28px}
+.lead-form .fh{font-size:18px;font-weight:900;margin-bottom:18px}
+.lead-form label{display:block;font-size:13px;font-weight:800;color:var(--muted);margin-bottom:16px}
+.lead-form input[type=text],.lead-form input[type=tel],.lead-form select{width:100%;margin-top:7px;border:1.5px solid var(--line);border-radius:12px;padding:13px 15px;font-size:15px;font-family:inherit;color:var(--ink);background:#fff;font-weight:600}
+.lead-form input:focus,.lead-form select:focus{outline:none;border-color:var(--green)}
+.lead-form .chk{display:flex;align-items:flex-start;gap:9px;font-size:13.5px;font-weight:600;color:var(--ink);margin-bottom:20px}
+.lead-form .chk input{margin-top:3px;width:17px;height:17px;accent-color:var(--green);flex:none}
+.lead-form button{width:100%;justify-content:center}
+.lead-msg{margin-top:16px;font-size:14px;line-height:1.6;display:none;border-radius:12px;padding:14px 16px}
+.lead-msg.on{display:block}
+.lead-msg.info{background:#eef7ee;border:1px solid #cfe4cd;color:var(--green-deep)}
+.lead-msg.warn{background:#fdf0eb;border:1px solid #f3cfc3;color:#a3462c}
+.lead-msg a{font-weight:900;color:var(--green);border-bottom:2px solid var(--green)}
+
+/* ===== 하단 고정 상담 바 ===== */
+.fixbar{position:fixed;left:0;right:0;bottom:0;z-index:110;background:rgba(26,30,26,.94);backdrop-filter:blur(10px);
+  transform:translateY(105%);transition:transform .28s cubic-bezier(.3,.7,.3,1);border-top:1px solid rgba(255,255,255,.1)}
+.fixbar.on{transform:translateY(0)}
+.fixbar .in{max-width:1120px;margin:0 auto;padding:12px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.fixbar .txt{color:#fff;font-weight:800;font-size:15px}
+.fixbar .txt span{display:block;color:#b9c7b6;font-size:12.5px;font-weight:600;margin-top:2px}
+.fixbar .acts{display:flex;gap:10px;flex:none}
+.fixbar a{font-weight:800;font-size:14px;padding:11px 20px;border-radius:999px;transition:.18s;white-space:nowrap}
+.fixbar .b1{background:rgba(255,255,255,.14);color:#fff}
+.fixbar .b1:hover{background:rgba(255,255,255,.24)}
+.fixbar .b2{background:var(--lime);color:var(--ink)}
+.fixbar .b2:hover{background:var(--lime-deep)}
+@media(max-width:640px){.fixbar .txt span{display:none}.fixbar .in{padding:10px 16px;gap:10px}.fixbar a{padding:11px 15px;font-size:13.5px}}
+
 /* CTA */
 .cta-band{background:var(--green);color:#fff;text-align:center;padding:80px 0}
 .cta-band h2{font-size:32px;font-weight:900}
@@ -208,7 +272,7 @@ a{text-decoration:none;color:inherit}
 .cta-band .btns{margin-top:28px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
 .cta-band .btn-white{background:#fff;color:var(--green-deep)}
 
-.foot{background:var(--green-deep);color:#c9d3c4;padding:44px 0;font-size:14px}
+.foot{background:var(--green-deep);color:#c9d3c4;padding:44px 0 108px;font-size:14px}
 .foot .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
 .foot .logo{color:#fff}
 .ph-tag{position:fixed;left:12px;bottom:22px;z-index:120;background:var(--red);color:#fff;font-size:12px;font-weight:800;padding:6px 12px;border-radius:8px;opacity:.9}
@@ -458,6 +522,110 @@ a{text-decoration:none;color:inherit}
   </div>
 </section>
 
+<!-- ===== 매장 유형별 솔루션 패키지 ===== -->
+<section class="pkg">
+  <div class="wrap">
+    <div class="head">
+      <div class="eb">SOLUTION PACKAGE</div>
+      <h2>내 매장에 필요한 구성만,<br>묶어서 넣습니다.</h2>
+      <p>매장 유형에 따라 필요한 모듈이 다릅니다. 아래 구성을 기준으로 상담에서 조정해 드립니다.</p>
+    </div>
+
+    <div class="pkg-grid">
+      <div class="pkg-card">
+        <span class="tag">스터디카페</span>
+        <h3>학습 몰입형 구성</h3>
+        <div class="desc">장기 체류 학습자 중심. 좌석·이용권 관리와 학습 동기 부여까지.</div>
+        <ul class="pkg-list">
+          <li>앱 결제 · 출입 통제</li>
+          <li>AIoT 냉난방 자동제어</li>
+          <li>AI 학습관리 · 학습 타이머</li>
+          <li>스마트 사물함</li>
+          <li>CCTV 원격 관제</li>
+          <li>좌석 · 이용권 관리</li>
+          <li class="off">회의실 예약</li>
+        </ul>
+        <a class="pkg-cta" href="무인화연구소-창업.html">이 구성으로 상담 →</a>
+      </div>
+
+      <div class="pkg-card b">
+        <span class="tag">워크라운지</span>
+        <h3>업무 공간형 구성</h3>
+        <div class="desc">프리랜서·1인 창업자 대상. 회의실과 좌석 운영이 핵심입니다.</div>
+        <ul class="pkg-list">
+          <li>앱 결제 · 출입 통제</li>
+          <li>AIoT 냉난방 자동제어</li>
+          <li>회의실 예약 · 이용 관리</li>
+          <li>좌석 · 이용권 관리</li>
+          <li>CCTV 원격 관제</li>
+          <li>스마트 사물함</li>
+          <li class="off">AI 학습관리</li>
+        </ul>
+        <a class="pkg-cta" href="무인화연구소-창업.html">이 구성으로 상담 →</a>
+      </div>
+
+      <div class="pkg-card c">
+        <span class="tag">공실 · 기타 무인매장</span>
+        <h3>최소 무인 운영 구성</h3>
+        <div class="desc">공실 수익화나 소규모 무인 매장을 가볍게 시작하는 구성입니다.</div>
+        <ul class="pkg-list">
+          <li>앱 결제 · 출입 통제</li>
+          <li>원격 도어 제어</li>
+          <li>기기 상태 모니터링</li>
+          <li>CCTV 원격 관제</li>
+          <li class="off">AI 학습관리</li>
+          <li class="off">스마트 사물함</li>
+          <li class="off">회의실 예약</li>
+        </ul>
+        <a class="pkg-cta" href="무인화연구소-창업.html">이 구성으로 상담 →</a>
+      </div>
+    </div>
+    <p class="pkg-note">* 구성은 매장 면적 · 층 조건 · 운영 방식에 따라 조정됩니다. 정확한 구성과 비용은 상담에서 안내해 드립니다.</p>
+  </div>
+</section>
+
+<!-- ===== 도입 상담 (폼 + 전화) ===== -->
+<section class="lead" id="lead">
+  <div class="wrap lead-grid">
+    <div class="copy">
+      <div class="eb">CONTACT</div>
+      <h2>솔루션 도입,<br>무엇부터 봐야 할지 알려드립니다.</h2>
+      <p>매장 유형과 규모만 알려주시면 필요한 구성과 예상 비용을 정리해 드립니다. 이미 운영 중인 매장의 시스템 교체 상담도 가능합니다.</p>
+      <div class="lead-tel">
+        <div class="k">전화 상담</div>
+        <div class="v">1811-9544</div>
+        <div class="t">상담시간 평일 10:00 ~ 19:00<br>매장 시스템은 상담시간과 무관하게 24시간 무인 운영됩니다.</div>
+      </div>
+    </div>
+
+    <form class="lead-form" id="leadForm" novalidate>
+      <div class="fh">상담 신청</div>
+      <label>이름
+        <input type="text" id="ldName" placeholder="성함을 입력해 주세요" autocomplete="name">
+      </label>
+      <label>연락처
+        <input type="tel" id="ldTel" placeholder="010-0000-0000" autocomplete="tel">
+      </label>
+      <label>매장 유형
+        <select id="ldType">
+          <option value="">선택해 주세요</option>
+          <option>스터디카페</option>
+          <option>워크라운지 · 공유오피스</option>
+          <option>공실 수익화</option>
+          <option>기타 무인매장</option>
+          <option>아직 정하지 못했어요</option>
+        </select>
+      </label>
+      <label class="chk">
+        <input type="checkbox" id="ldAgree">
+        <span>(필수) 상담 진행을 위한 개인정보 수집·이용에 동의합니다.</span>
+      </label>
+      <button type="submit" class="btn btn-green">상담 접수하기</button>
+      <div class="lead-msg" id="leadMsg" role="status" aria-live="polite"></div>
+    </form>
+  </div>
+</section>
+
 <!-- CTA -->
 <section class="cta-band">
   <div class="wrap">
@@ -482,7 +650,49 @@ a{text-decoration:none;color:inherit}
   </div>
 </footer>
 
+<!-- 하단 고정 상담 바 -->
+<div class="fixbar" id="fixbar">
+  <div class="in">
+    <div class="txt">무인화 솔루션 도입 상담<span>매장 유형만 알려주시면 필요한 구성을 정리해 드립니다.</span></div>
+    <div class="acts">
+      <a class="b1" href="tel:18119544">📞 1811-9544</a>
+      <a class="b2" href="#lead">상담 신청</a>
+    </div>
+  </div>
+</div>
+
 <script>
+/* 상담 폼 — 온라인 접수 연동 전, 검증 후 전화 상담 안내 */
+(function(){
+  var f=document.getElementById('leadForm');
+  if(!f)return;
+  var msg=document.getElementById('leadMsg');
+  function show(type,html){msg.className='lead-msg on '+type;msg.innerHTML=html;}
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    var name=document.getElementById('ldName').value.trim();
+    var tel=document.getElementById('ldTel').value.replace(/[^0-9]/g,'');
+    var agree=document.getElementById('ldAgree').checked;
+    if(!name){show('warn','성함을 입력해 주세요.');return;}
+    if(tel.length<9){show('warn','연락처를 정확히 입력해 주세요.');return;}
+    if(!agree){show('warn','개인정보 수집·이용 동의가 필요합니다.');return;}
+    show('info','<b>온라인 접수는 준비 중입니다.</b><br>지금은 전화로 바로 상담해 드립니다 — <a href="tel:18119544">1811-9544</a> (평일 10:00~19:00)<br>입력하신 내용은 전송되지 않았습니다.');
+  });
+})();
+
+/* 하단 고정 바 — 히어로 지나면 노출 */
+(function(){
+  var bar=document.getElementById('fixbar'),tag=document.querySelector('.ph-tag');
+  if(!bar)return;
+  function upd(){
+    var on=window.scrollY>560;
+    bar.classList.toggle('on',on);
+    if(tag)tag.style.bottom=on?'76px':'22px';
+  }
+  window.addEventListener('scroll',upd,{passive:true});
+  upd();
+})();
+
 /* ① AIoT 온도 자동 조절 (27.4° → 목표 24° 왕복) */
 (function(){
   var temp=document.getElementById('acTemp'),thumb=document.getElementById('acThumb'),
