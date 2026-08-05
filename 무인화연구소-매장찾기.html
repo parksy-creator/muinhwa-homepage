@@ -4,62 +4,86 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>매장찾기 | 무인화연구소</title>
-<meta name="description" content="앤딩스터디카페·앤딩워크라운지 등 무인화연구소 운영 매장을 지역별로 찾아보세요.">
+<meta name="description" content="앤딩스터디카페·앤딩워크라운지 등 무인화연구소 운영 매장 40개 지점을 지역별로 찾아보세요. 서울·경기·인천·충남·부산 지점 목록입니다.">
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://www.muinlab.io/stores">
 <meta property="og:type" content="website"><meta property="og:site_name" content="무인화연구소">
 <meta property="og:title" content="매장찾기 | 무인화연구소"><meta property="og:url" content="https://www.muinlab.io/stores">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
 <style>
-:root{--paper:#F1F1EC;--ink:#1A1E1A;--muted:#5b625a;--green:#2E5A3E;--green-deep:#213f2c;--green-soft:#3E6B4A;--lime:#C8F03C;--coral:#EF9A87;--line:#e2e0d6}
+:root{--paper:#F1F1EC;--ink:#1A1E1A;--muted:#5b625a;--green:#2E5A3E;--green-deep:#213f2c;--green-soft:#3E6B4A;--sage:#A9C48A;--lime:#C8F03C;--coral:#EF9A87;--coral-deep:#e5806a;--line:#e2e0d6}
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{font-family:'Pretendard',-apple-system,BlinkMacSystemFont,'Malgun Gothic',sans-serif;color:var(--ink);background:var(--paper);line-height:1.65;-webkit-font-smoothing:antialiased}
 a{text-decoration:none;color:inherit}
-.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+.wrap{max-width:1160px;margin:0 auto;padding:0 24px}
 .btn{display:inline-flex;align-items:center;gap:8px;font-weight:800;border-radius:999px;padding:11px 20px;font-size:14px;cursor:pointer;border:none;transition:.2s}
 .btn-green{background:var(--green);color:#fff}.btn-green:hover{background:var(--green-deep);transform:translateY(-2px)}
+/* nav */
 .nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(241,241,236,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-.nav .in{max-width:1120px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:64px}
+.nav .in{max-width:1160px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:64px}
 .logo{display:flex;align-items:center;gap:10px;font-weight:900;font-size:19px;color:var(--ink)}
 .logo .mark{width:32px;height:32px;background:linear-gradient(135deg,var(--green),var(--lime));color:#fff;border-radius:8px;display:grid;place-items:center;font-size:11px;font-weight:900;letter-spacing:-1px}
 .menu{display:flex;gap:20px;list-style:none;align-items:center}
 .menu a{font-weight:700;font-size:14px;color:var(--ink)}.menu a:hover{color:var(--green)}.menu a.on{color:var(--green);border-bottom:2px solid var(--green);padding-bottom:2px}
 .nav-right{display:flex;align-items:center;gap:14px}.nav-tel{font-weight:800;font-size:15px}
 @media(max-width:1080px){.nav-tel{display:none}}@media(max-width:820px){.menu{display:none}}
-.phero{padding:128px 0 56px;background:linear-gradient(160deg,#3E6B4A,#2E5A3E 55%,#213f2c);color:#fff;text-align:center}
-.phero .eb{color:#d9f0d3;font-weight:800;font-size:15px}
-.phero h1{font-size:44px;font-weight:900;letter-spacing:-.03em;margin-top:12px;line-height:1.2}
-.phero p{color:#e7f3e5;font-size:18px;margin:16px auto 0;max-width:600px}
-@media(max-width:640px){.phero h1{font-size:30px}}
-.sec{padding:56px 0 80px}
-/* 필터 */
-.filter{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-bottom:14px}
-.filter select,.filter input{border:1.5px solid var(--line);border-radius:12px;padding:13px 16px;font-size:15px;font-family:inherit;background:#fff;min-width:180px}
-.filter input{flex:1;max-width:360px}
-.filter .btn-green{padding:13px 24px}
-.chips{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:28px}
-.chips span{font-size:13px;font-weight:700;border:1px solid var(--line);background:#fff;border-radius:999px;padding:8px 15px;cursor:pointer}
-.chips span.on{background:var(--green);color:#fff;border-color:var(--green)}
-/* 지역별 매장 리스트 */
-.region-block{margin-bottom:34px}
-.store-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:14px}
-@media(max-width:900px){.store-grid{grid-template-columns:repeat(3,1fr)}}
-@media(max-width:640px){.store-grid{grid-template-columns:repeat(2,1fr)}}
-.region-head{font-weight:900;font-size:18px;color:var(--green);display:flex;align-items:center;gap:10px}
-.region-head .cnt{font-size:13px;font-weight:800;color:var(--muted);background:#fff;border:1px solid var(--line);border-radius:999px;padding:3px 11px}
-.count-bar{text-align:center;margin-bottom:20px;font-weight:800;color:var(--green);font-size:16px}
-.count-bar b{font-size:24px;color:var(--green-deep)}
-.store{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px 16px;transition:.15s;cursor:pointer}
-.store:hover{border-color:var(--green);background:#fbfdfa}
-.store h3{font-size:15px;font-weight:800}
-.store .addr{color:var(--muted);font-size:13px;margin-top:4px}
-.note{text-align:center;color:var(--muted);font-size:14px;margin-top:26px}
+/* hero */
+.phero{padding:120px 0 58px;background:linear-gradient(160deg,#3E6B4A,#2E5A3E 55%,#213f2c);color:#fff;text-align:center}
+.phero .eb{color:var(--lime);font-weight:800;font-size:14px;letter-spacing:.06em}
+.phero h1{font-size:40px;font-weight:900;letter-spacing:-.03em;margin-top:12px;line-height:1.22}
+.phero p{color:#e7f3e5;font-size:17px;margin:14px auto 0;max-width:600px}
+.phero .crumb{margin-top:18px;font-size:13px;color:#cfe4cd}.phero .crumb a{color:#fff;font-weight:700}
+@media(max-width:640px){.phero h1{font-size:28px}.phero p{font-size:15px}}
+/* 검색 + 지역 필터 */
+.tools{position:sticky;top:64px;z-index:60;background:rgba(241,241,236,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);padding:18px 0}
+.tools .in{max-width:1160px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chip{background:#fff;border:1px solid var(--line);color:var(--muted);font-weight:800;font-size:13px;padding:9px 16px;border-radius:999px;cursor:pointer;transition:.15s;font-family:inherit}
+.chip:hover{border-color:var(--sage);color:var(--ink)}
+.chip.on{background:var(--green);border-color:var(--green);color:#fff}
+.chip .n{opacity:.6;font-size:12px;margin-left:4px}
+.search{display:flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:8px 16px;min-width:260px}
+.search input{border:none;outline:none;font-family:inherit;font-size:14px;background:none;color:var(--ink);width:100%}
+.search input::placeholder{color:#9aa295}
+.search .ic{font-size:14px;opacity:.5}
+@media(max-width:700px){.search{min-width:100%;order:-1}}
+/* 매장 카드 그리드 (블로그 카드 형태 · 클릭 없음) */
+.sec{padding:44px 0 78px}
+.cnt{margin-bottom:26px;font-size:14px;color:var(--muted);font-weight:700}
+.cnt b{color:var(--ink)}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:40px 28px}
+@media(max-width:1080px){.grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:820px){.grid{grid-template-columns:repeat(2,1fr);gap:30px 20px}}
+@media(max-width:520px){.grid{grid-template-columns:1fr}}
+.scard.hide{display:none}
+.thumb{position:relative;aspect-ratio:1/1;overflow:hidden;border-radius:6px;display:grid;place-items:center}
+.thumb::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(115deg,transparent 0 26px,rgba(255,255,255,.13) 26px 27px)}
+.thumb .pin{font-size:40px;filter:drop-shadow(0 4px 10px rgba(0,0,0,.22));position:relative;z-index:1}
+.thumb.v1{background:linear-gradient(150deg,#3E6B4A,#2E5A3E 55%,#213f2c)}
+.thumb.v2{background:linear-gradient(150deg,#bcd3a0,#A9C48A 55%,#7fa267)}
+.thumb.v3{background:linear-gradient(150deg,#d4f552,#C8F03C 55%,#b4e01f)}
+.thumb.v4{background:linear-gradient(150deg,#f6bcae,#EF9A87 60%,#e5806a)}
+.badge{position:absolute;left:12px;bottom:12px;z-index:2;background:#111;color:#fff;font-size:11px;font-weight:800;letter-spacing:.08em;padding:5px 11px;border-radius:4px}
+.scard h3{font-size:18px;font-weight:800;line-height:1.42;letter-spacing:-.02em;margin-top:18px}
+.scard p{color:var(--muted);font-size:14px;margin-top:8px;line-height:1.55}
+.stags{display:flex;gap:6px;flex-wrap:wrap;margin-top:14px}
+.stags span{border:1px solid var(--coral);color:var(--coral-deep);font-size:12px;font-weight:700;padding:4px 11px;border-radius:999px;background:#fff}
+.empty{text-align:center;color:var(--muted);padding:70px 0;font-size:16px;display:none}
+.empty.on{display:block}
+.note{text-align:center;color:var(--muted);font-size:14px;margin-top:40px}
+/* CTA + footer */
+.cta{background:var(--green);color:#fff;text-align:center;padding:70px 0}
+.cta h2{font-size:28px;font-weight:900}.cta p{color:#d9ecd6;margin-top:10px}
+.cta .tel{margin-top:14px;font-size:22px;font-weight:900;color:var(--lime)}
+.cta .btn{margin-top:22px;background:var(--lime);color:var(--ink)}
+.cta .btn:hover{background:#b4e01f}
 .foot{background:var(--green-deep);color:#c9d3c4;padding:44px 0;font-size:14px}
 .foot .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}.foot .logo{color:#fff}
 </style>
 </head>
 <body>
+
 <nav class="nav"><div class="in">
   <a class="logo" href="index.html"><span class="mark">무인화</span>무인화연구소</a>
   <ul class="menu">
@@ -73,89 +97,403 @@ a{text-decoration:none;color:inherit}
   <div class="nav-right"><span class="nav-tel">📞 1811-9544</span><a href="무인화연구소-창업.html" class="btn btn-green">창업 상담</a></div>
 </div></nav>
 
-<header class="phero"><div class="wrap">
-  <div class="eb">매장찾기</div>
-  <h1>가까운 앤딩 매장을<br>찾아보세요.</h1>
-  <p>전국 40개 지점을 지역별로 확인하실 수 있습니다.</p>
-</div></header>
-
-<section class="sec"><div class="wrap">
-  <div class="filter">
-    <select><option>전체 지역</option><option>서울</option><option>경기</option><option>부산</option><option>기타</option></select>
-    <input placeholder="매장명·지역 검색">
-    <button class="btn btn-green">검색</button>
+<header class="phero">
+  <div class="wrap">
+    <div class="eb">STORES</div>
+    <h1>가까운 앤딩 매장을<br>찾아보세요.</h1>
+    <p>전국 40개 지점을 지역별로 확인하실 수 있습니다.</p>
+    <div class="crumb"><a href="index.html">홈</a> › 매장찾기</div>
   </div>
-  <div class="chips"><span class="on">전체</span><span>서울</span><span>경기</span><span>인천</span><span>충남</span><span>부산</span></div>
-  <div class="count-bar">전국 <b>40</b>개 지점 운영 중</div>
+</header>
 
-  <div class="stores">
-    <div class="region-block">
-      <div class="region-head">서울 <span class="cnt">22개</span></div>
-      <div class="store-grid">
-        <div class="store"><h3>강남구청역점</h3></div>
-        <div class="store"><h3>강일동점</h3></div>
-        <div class="store"><h3>개롱역점</h3></div>
-        <div class="store"><h3>개봉역점</h3></div>
-        <div class="store"><h3>개포점</h3></div>
-        <div class="store"><h3>거여역점</h3></div>
-        <div class="store"><h3>냉천점</h3></div>
-        <div class="store"><h3>봉천점</h3></div>
-        <div class="store"><h3>북가좌점</h3></div>
-        <div class="store"><h3>상도점</h3></div>
-        <div class="store"><h3>암사역점</h3></div>
-        <div class="store"><h3>영등포역점</h3></div>
-        <div class="store"><h3>오금점</h3></div>
-        <div class="store"><h3>오류동역점</h3></div>
-        <div class="store"><h3>오목교역점</h3></div>
-        <div class="store"><h3>이수역점</h3></div>
-        <div class="store"><h3>자양점</h3></div>
-        <div class="store"><h3>잠실학원사거리점</h3></div>
-        <div class="store"><h3>정릉서경대점</h3></div>
-        <div class="store"><h3>종암점</h3></div>
-        <div class="store"><h3>홍은점</h3></div>
-        <div class="store"><h3>홍제역점</h3></div>
-      </div>
-    </div>
-    <div class="region-block">
-      <div class="region-head">경기 <span class="cnt">15개</span></div>
-      <div class="store-grid">
-        <div class="store"><h3>광명철산점</h3></div>
-        <div class="store"><h3>광명하안점</h3></div>
-        <div class="store"><h3>다산점</h3></div>
-        <div class="store"><h3>동탄영천점</h3></div>
-        <div class="store"><h3>산본점</h3></div>
-        <div class="store"><h3>성남야탑점</h3></div>
-        <div class="store"><h3>수원영통점</h3></div>
-        <div class="store"><h3>수원정자점</h3></div>
-        <div class="store"><h3>아주대점</h3></div>
-        <div class="store"><h3>용인동백역점</h3></div>
-        <div class="store"><h3>용인신갈점</h3></div>
-        <div class="store"><h3>하남덕풍점</h3></div>
-        <div class="store"><h3>하대원점</h3></div>
-        <div class="store"><h3>호평점</h3></div>
-        <div class="store"><h3>화성봉담점</h3></div>
-      </div>
-    </div>
-    <div class="region-block">
-      <div class="region-head">인천 <span class="cnt">1개</span></div>
-      <div class="store-grid">
-        <div class="store"><h3>인천완정역점</h3></div>
-      </div>
-    </div>
-    <div class="region-block">
-      <div class="region-head">충남 <span class="cnt">1개</span></div>
-      <div class="store-grid">
-        <div class="store"><h3>천안불당점</h3></div>
-      </div>
-    </div>
-    <div class="region-block">
-      <div class="region-head">부산 <span class="cnt">1개</span></div>
-      <div class="store-grid">
-        <div class="store"><h3>부산하단역점</h3></div>
-      </div>
-    </div>
+<section class="tools"><div class="in">
+  <div class="chips">
+    <button class="chip on" data-f="all">전체<span class="n">40</span></button>
+    <button class="chip" data-f="seoul">서울<span class="n">22</span></button>
+    <button class="chip" data-f="gyeonggi">경기<span class="n">15</span></button>
+    <button class="chip" data-f="incheon">인천<span class="n">1</span></button>
+    <button class="chip" data-f="chungnam">충남<span class="n">1</span></button>
+    <button class="chip" data-f="busan">부산<span class="n">1</span></button>
   </div>
-  <p class="note">* 등록 지점 리스트 기준 40개 지점입니다. 주소·신규 지점은 확정 후 업데이트됩니다.</p>
+  <label class="search">
+    <span class="ic">🔍</span>
+    <input type="text" id="q" placeholder="매장명·지역 검색" autocomplete="off">
+  </label>
+</div></section>
+
+<main class="sec"><div class="wrap">
+  <div class="cnt">전국 <b id="shown">40</b>개 지점 운영 중</div>
+  <div class="grid" id="grid">
+      <article class="scard" data-region="seoul" data-key="강남구청역점 서울">
+        <div class="thumb v1">
+          <span class="pin">📍</span>
+          <span class="badge">STORE</span>
+        </div>
+        <h3>강남구청역점</h3>
+        <p>서울 · 24시간 무인 운영</p>
+        <div class="stags"><span>#서울</span><span>#앤딩스터디카페</span></div>
+      </article>
+      <article class="scard" data-region="seoul" data-key="강일동점 서울">
+        <div class="thumb v2">
+          <span class="pin">📍</span>
+          <span class="badge">STORE</span>
+        </div>
+        <h3>강일동점</h3>
+        <p>서울 · 24시간 무인 운영</p>
+        <div class="stags"><span>#서울</span><span>#앤딩스터디카페</span></div>
+      </article>
+      <article class="scard" data-region="seoul" data-key="개롱역점 서울">
+        <div class="thumb v3">
+          <span class="pin">📍</span>
+          <span class="badge">STORE</span>
+        </div>
+        <h3>개롱역점</h3>
+        <p>서울 · 24시간 무인 운영</p>
+        <div class="stags"><span>#서울</span><span>#앤딩스터디카페</span></div>
+      </article>
+      <article class="scard" data-region="seoul" data-key="개봉역점 서울">
+        <div class="thumb v4">
+          <span class="pin">📍</span>
+          <span class="badge">STORE</span>
+        </div>
+        <h3>개봉역점</h3>
+        <p>서울 · 24시간 무인 운영</p>
+        <div class="stags"><span>#서울</span><span>#앤딩스터디카페</span></div>
+      </article>
+      <article class="scard" data-region="seoul" data-key="개포점 서울">
+        <div class="thumb v1">
+          <span class="pin">📍</span>
+          <span class="badge">STORE</span>
+        </div>
+        <h3>개포점</h3>
+        <p>서울 · 24시간 무인 운영</p>
+        <div class="stags"><span>#서울</span><span>#앤딩스터디카페</span></div>
+      </article>
+      <article class="scard" data-region="seoul" data-key="거여역점 서울">
+        <div class="thumb v2">
+          <span class="pin">📍</span>
+          <span class="badge">STORE</span>
+        </div>
+        <h3>거여역점</h3>
+        <p>서울 · 24시간 무인 운영</p>
+        <div class="stags"><span>#서울</span><span>#앤딩스터디카페</span></div>
+      </article>
+      <article class="scard" data-region="seoul" data-key="냉천점 서울">
+        <div class="thumb v3">
+          <span class="pin">📍</span>
+          <span class="badge">STORE</span>
+        </div>
+        <h3>냉천점</h3>
+        <p>서울 · 24시간 무인 운영</p>
+        <div class="stags"><span>#서울</span><span>#앤딩스터디카페</span></div>
+      </article>
+      <article class="scard" data-region="seoul" data-key="봉천점 서울">
+        <div class="thumb v4">
+          <span class="pin">📍</span>
+          <span class="badge">STORE</span>
+        </div>
+        <h3>봉천점</h3>
+        <p>서울 · 24시간 무인 운영</p>
+        <div class="stags"><span>#서울</span><span>#앤딩스터디카페</span></div>
+      </article>
+      <article class="scard" data-region="seoul" data-key="북가좌점 서울">
+        <div class="thumb v1">
+          <span class="pin">📍</span>
+          <span class="badge">STORE</span>
+        </div>
+        <h3>북가좌점</h3>
+        <p>서울 · 24시간 무인 운영</p>
+        <div class="stags"><span>#서울</span><span>#앤딩스터디카페</span></div>
+      </article>
+      <article class="scard" data-region="seoul" data-key="상도점 서울">
+        <div class="thumb v2">
+          <span class="pin">📍</span>
+          <span class="badge">STORE</span>
+        </div>
+        <h3>상도점</h3>
+        <p>서울 · 24시간 무인 운영</p>
+        <div class="stags"><span>#서울</span><span>#앤딩스터디카페</span></div>
+      </article>
+      <article class="scard" data-region="seoul" data-key="암사역점 서울">
+        <div class="thumb v3">
+          <span class="pin">📍</span>
+          <span class="badge">STORE</span>
+        </div>
+        <h3>암사역점</h3>
+        <p>서울 · 24시간 무인 운영</p>
+        <div class="stags"><span>#서울</span><span>#앤딩스터디카페</span></div>
+      </article>
+      <article class="scard" data-region="seoul" data-key="영등포역점 서울">
+        <div class="thumb v4">
+          <span class="pin">📍</span>
+          <span class="badge">STORE</span>
+        </div>
+        <h3>영등포역점</h3>
+        <p>서울 · 24시간 무인 운영</p>
+        <div class="stags"><span>#서울</span><span>#앤딩스터디카페</span></div>
+      </article>
+      <article class="scard" data-region="seoul" data-key="오금점 서울">
+        <div class="thumb v1">
+          <span class="pin">📍</span>
+          <span class="badge">STORE</span>
+        </div>
+        <h3>오금점</h3>
+        <p>서울 · 24시간 무인 운영</p>
+        <div class="stags"><span>#서울</span><span>#앤딩스터디카페</span></div>
+      </article>
+      <article class="scard" data-region="seoul" data-key="오류동역점 서울">
+        <div class="thumb v2">
+          <span class="pin">📍</span>
+          <span class="badge">STORE</span>
+        </div>
+        <h3>오류동역점</h3>
+        <p>서울 · 24시간 무인 운영</p>
+        <div class="stags"><span>#서울</span><span>#앤딩스터디카페</span></div>
+      </article>
+      <article class="scard" data-region="seoul" data-key="오목교역점 서울">
+        <div class="thumb v3">
+          <span class="pin">📍</span>
+          <span class="badge">STORE</span>
+        </div>
+        <h3>오목교역점</h3>
+        <p>서울 · 24시간 무인 운영</p>
+        <div class="stags"><span>#서울</span><span>#앤딩스터디카페</span></div>
+      </article>
+      <article class="scard" data-region="seoul" data-key="이수역점 서울">
+        <div class="thumb v4">
+          <span class="pin">📍</span>
+          <span class="badge">STORE</span>
+        </div>
+        <h3>이수역점</h3>
+        <p>서울 · 24시간 무인 운영</p>
+        <div class="stags"><span>#서울</span><span>#앤딩스터디카페</span></div>
+      </article>
+      <article class="scard" data-region="seoul" data-key="자양점 서울">
+        <div class="thumb v1">
+          <span class="pin">📍</span>
+          <span class="badge">STORE</span>
+        </div>
+        <h3>자양점</h3>
+        <p>서울 · 24시간 무인 운영</p>
+        <div class="stags"><span>#서울</span><span>#앤딩스터디카페</span></div>
+      </article>
+      <article class="scard" data-region="seoul" data-key="잠실학원사거리점 서울">
+        <div class="thumb v2">
+          <span class="pin">📍</span>
+          <span class="badge">STORE</span>
+        </div>
+        <h3>잠실학원사거리점</h3>
+        <p>서울 · 24시간 무인 운영</p>
+        <div class="stags"><span>#서울</span><span>#앤딩스터디카페</span></div>
+      </article>
+      <article class="scard" data-region="seoul" data-key="정릉서경대점 서울">
+        <div class="thumb v3">
+          <span class="pin">📍</span>
+          <span class="badge">STORE</span>
+        </div>
+        <h3>정릉서경대점</h3>
+        <p>서울 · 24시간 무인 운영</p>
+        <div class="stags"><span>#서울</span><span>#앤딩스터디카페</span></div>
+      </article>
+      <article class="scard" data-region="seoul" data-key="종암점 서울">
+        <div class="thumb v4">
+          <span class="pin">📍</span>
+          <span class="badge">STORE</span>
+        </div>
+        <h3>종암점</h3>
+        <p>서울 · 24시간 무인 운영</p>
+        <div class="stags"><span>#서울</span><span>#앤딩스터디카페</span></div>
+      </article>
+      <article class="scard" data-region="seoul" data-key="홍은점 서울">
+        <div class="thumb v1">
+          <span class="pin">📍</span>
+          <span class="badge">STORE</span>
+        </div>
+        <h3>홍은점</h3>
+        <p>서울 · 24시간 무인 운영</p>
+        <div class="stags"><span>#서울</span><span>#앤딩스터디카페</span></div>
+      </article>
+      <article class="scard" data-region="seoul" data-key="홍제역점 서울">
+        <div class="thumb v2">
+          <span class="pin">📍</span>
+          <span class="badge">STORE</span>
+        </div>
+        <h3>홍제역점</h3>
+        <p>서울 · 24시간 무인 운영</p>
+        <div class="stags"><span>#서울</span><span>#앤딩스터디카페</span></div>
+      </article>
+      <article class="scard" data-region="gyeonggi" data-key="광명철산점 경기">
+        <div class="thumb v3">
+          <span class="pin">📍</span>
+          <span class="badge">STORE</span>
+        </div>
+        <h3>광명철산점</h3>
+        <p>경기 · 24시간 무인 운영</p>
+        <div class="stags"><span>#경기</span><span>#앤딩스터디카페</span></div>
+      </article>
+      <article class="scard" data-region="gyeonggi" data-key="광명하안점 경기">
+        <div class="thumb v4">
+          <span class="pin">📍</span>
+          <span class="badge">STORE</span>
+        </div>
+        <h3>광명하안점</h3>
+        <p>경기 · 24시간 무인 운영</p>
+        <div class="stags"><span>#경기</span><span>#앤딩스터디카페</span></div>
+      </article>
+      <article class="scard" data-region="gyeonggi" data-key="다산점 경기">
+        <div class="thumb v1">
+          <span class="pin">📍</span>
+          <span class="badge">STORE</span>
+        </div>
+        <h3>다산점</h3>
+        <p>경기 · 24시간 무인 운영</p>
+        <div class="stags"><span>#경기</span><span>#앤딩스터디카페</span></div>
+      </article>
+      <article class="scard" data-region="gyeonggi" data-key="동탄영천점 경기">
+        <div class="thumb v2">
+          <span class="pin">📍</span>
+          <span class="badge">STORE</span>
+        </div>
+        <h3>동탄영천점</h3>
+        <p>경기 · 24시간 무인 운영</p>
+        <div class="stags"><span>#경기</span><span>#앤딩스터디카페</span></div>
+      </article>
+      <article class="scard" data-region="gyeonggi" data-key="산본점 경기">
+        <div class="thumb v3">
+          <span class="pin">📍</span>
+          <span class="badge">STORE</span>
+        </div>
+        <h3>산본점</h3>
+        <p>경기 · 24시간 무인 운영</p>
+        <div class="stags"><span>#경기</span><span>#앤딩스터디카페</span></div>
+      </article>
+      <article class="scard" data-region="gyeonggi" data-key="성남야탑점 경기">
+        <div class="thumb v4">
+          <span class="pin">📍</span>
+          <span class="badge">STORE</span>
+        </div>
+        <h3>성남야탑점</h3>
+        <p>경기 · 24시간 무인 운영</p>
+        <div class="stags"><span>#경기</span><span>#앤딩스터디카페</span></div>
+      </article>
+      <article class="scard" data-region="gyeonggi" data-key="수원영통점 경기">
+        <div class="thumb v1">
+          <span class="pin">📍</span>
+          <span class="badge">STORE</span>
+        </div>
+        <h3>수원영통점</h3>
+        <p>경기 · 24시간 무인 운영</p>
+        <div class="stags"><span>#경기</span><span>#앤딩스터디카페</span></div>
+      </article>
+      <article class="scard" data-region="gyeonggi" data-key="수원정자점 경기">
+        <div class="thumb v2">
+          <span class="pin">📍</span>
+          <span class="badge">STORE</span>
+        </div>
+        <h3>수원정자점</h3>
+        <p>경기 · 24시간 무인 운영</p>
+        <div class="stags"><span>#경기</span><span>#앤딩스터디카페</span></div>
+      </article>
+      <article class="scard" data-region="gyeonggi" data-key="아주대점 경기">
+        <div class="thumb v3">
+          <span class="pin">📍</span>
+          <span class="badge">STORE</span>
+        </div>
+        <h3>아주대점</h3>
+        <p>경기 · 24시간 무인 운영</p>
+        <div class="stags"><span>#경기</span><span>#앤딩스터디카페</span></div>
+      </article>
+      <article class="scard" data-region="gyeonggi" data-key="용인동백역점 경기">
+        <div class="thumb v4">
+          <span class="pin">📍</span>
+          <span class="badge">STORE</span>
+        </div>
+        <h3>용인동백역점</h3>
+        <p>경기 · 24시간 무인 운영</p>
+        <div class="stags"><span>#경기</span><span>#앤딩스터디카페</span></div>
+      </article>
+      <article class="scard" data-region="gyeonggi" data-key="용인신갈점 경기">
+        <div class="thumb v1">
+          <span class="pin">📍</span>
+          <span class="badge">STORE</span>
+        </div>
+        <h3>용인신갈점</h3>
+        <p>경기 · 24시간 무인 운영</p>
+        <div class="stags"><span>#경기</span><span>#앤딩스터디카페</span></div>
+      </article>
+      <article class="scard" data-region="gyeonggi" data-key="하남덕풍점 경기">
+        <div class="thumb v2">
+          <span class="pin">📍</span>
+          <span class="badge">STORE</span>
+        </div>
+        <h3>하남덕풍점</h3>
+        <p>경기 · 24시간 무인 운영</p>
+        <div class="stags"><span>#경기</span><span>#앤딩스터디카페</span></div>
+      </article>
+      <article class="scard" data-region="gyeonggi" data-key="하대원점 경기">
+        <div class="thumb v3">
+          <span class="pin">📍</span>
+          <span class="badge">STORE</span>
+        </div>
+        <h3>하대원점</h3>
+        <p>경기 · 24시간 무인 운영</p>
+        <div class="stags"><span>#경기</span><span>#앤딩스터디카페</span></div>
+      </article>
+      <article class="scard" data-region="gyeonggi" data-key="호평점 경기">
+        <div class="thumb v4">
+          <span class="pin">📍</span>
+          <span class="badge">STORE</span>
+        </div>
+        <h3>호평점</h3>
+        <p>경기 · 24시간 무인 운영</p>
+        <div class="stags"><span>#경기</span><span>#앤딩스터디카페</span></div>
+      </article>
+      <article class="scard" data-region="gyeonggi" data-key="화성봉담점 경기">
+        <div class="thumb v1">
+          <span class="pin">📍</span>
+          <span class="badge">STORE</span>
+        </div>
+        <h3>화성봉담점</h3>
+        <p>경기 · 24시간 무인 운영</p>
+        <div class="stags"><span>#경기</span><span>#앤딩스터디카페</span></div>
+      </article>
+      <article class="scard" data-region="incheon" data-key="인천완정역점 인천">
+        <div class="thumb v2">
+          <span class="pin">📍</span>
+          <span class="badge">STORE</span>
+        </div>
+        <h3>인천완정역점</h3>
+        <p>인천 · 24시간 무인 운영</p>
+        <div class="stags"><span>#인천</span><span>#앤딩스터디카페</span></div>
+      </article>
+      <article class="scard" data-region="chungnam" data-key="천안불당점 충남">
+        <div class="thumb v3">
+          <span class="pin">📍</span>
+          <span class="badge">STORE</span>
+        </div>
+        <h3>천안불당점</h3>
+        <p>충남 · 24시간 무인 운영</p>
+        <div class="stags"><span>#충남</span><span>#앤딩스터디카페</span></div>
+      </article>
+      <article class="scard" data-region="busan" data-key="부산하단역점 부산">
+        <div class="thumb v4">
+          <span class="pin">📍</span>
+          <span class="badge">STORE</span>
+        </div>
+        <h3>부산하단역점</h3>
+        <p>부산 · 24시간 무인 운영</p>
+        <div class="stags"><span>#부산</span><span>#앤딩스터디카페</span></div>
+      </article>
+  </div>
+  <div class="empty" id="empty">해당 조건의 매장이 없습니다. 다른 지역이나 키워드로 찾아보세요.</div>
+  <p class="note">* 등록 지점 리스트 기준 40개 지점입니다. 매장 사진·상세 주소·신규 지점은 확정 후 업데이트됩니다.</p>
+</div></main>
+
+<section class="cta"><div class="wrap">
+  <h2>내 지역에도 앤딩 매장을 열고 싶다면</h2>
+  <p>상권 분석부터 오픈·운영까지 본사가 함께합니다.</p>
+  <div class="tel">📞 1811-9544</div>
+  <a href="무인화연구소-창업.html" class="btn">무료 창업 상담 신청</a>
 </div></section>
 
 <footer class="foot"><div class="wrap">
@@ -164,5 +502,40 @@ a{text-decoration:none;color:inherit}
     <p style="font-size:14px;line-height:1.9">(주)무인화연구소&nbsp; ·&nbsp; 서울 올림픽로32길 32, 305호&nbsp; ·&nbsp; 가맹문의 1811-9544&nbsp; ·&nbsp; biz@muinlab.io</p>
   </div>
 </div></footer>
+
+<script>
+(function(){
+  var cards = Array.prototype.slice.call(document.querySelectorAll('.scard'));
+  var chips = Array.prototype.slice.call(document.querySelectorAll('.chip'));
+  var q = document.getElementById('q');
+  var shown = document.getElementById('shown');
+  var empty = document.getElementById('empty');
+  var region = 'all';
+
+  function apply(){
+    var kw = q.value.trim().toLowerCase();
+    var n = 0;
+    cards.forEach(function(c){
+      var okR = region === 'all' || c.dataset.region === region;
+      var okK = !kw || c.dataset.key.toLowerCase().indexOf(kw) > -1;
+      var ok = okR && okK;
+      c.classList.toggle('hide', !ok);
+      if(ok) n++;
+    });
+    shown.textContent = n;
+    empty.classList.toggle('on', n === 0);
+  }
+
+  chips.forEach(function(ch){
+    ch.addEventListener('click', function(){
+      chips.forEach(function(x){ x.classList.remove('on'); });
+      ch.classList.add('on');
+      region = ch.dataset.f;
+      apply();
+    });
+  });
+  q.addEventListener('input', apply);
+})();
+</script>
 </body>
 </html>

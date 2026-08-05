@@ -109,19 +109,12 @@ a{text-decoration:none;color:inherit}
 .split-hero:hover .half{flex-basis:42%}
 .split-hero .half:hover{flex-basis:58%}
 
-/* 가운데 브랜드 마크 (코랄) */
-.split-mark{position:absolute;left:50%;top:calc(50% + 32px);transform:translate(-50%,-50%);z-index:5;
-  background:var(--coral);color:var(--ink);width:96px;height:96px;border-radius:50%;
-  display:grid;place-items:center;text-align:center;font-weight:900;font-size:13px;line-height:1.2;
-  box-shadow:0 10px 34px rgba(0,0,0,.28);border:4px solid var(--paper);pointer-events:none}
-
 @media(max-width:860px){
   .split-hero{flex-direction:column;min-height:auto}
   .half{min-height:58vh}
   .half .inner,.half.right .inner{margin:0;padding:0 8%;max-width:none}
   .half h2{font-size:34px}
   .split-hero:hover .half,.split-hero .half:hover{flex-basis:auto}
-  .split-mark{display:none}
 }
 /* ===== 블로그 미리보기 (카드 스토리) ===== */
 .blogsec{padding:78px 0 88px;background:var(--paper)}
@@ -202,7 +195,6 @@ a{text-decoration:none;color:inherit}
     </div>
   </a>
 
-  <div class="split-mark">무인화<br>연구소</div>
 </main>
 
 <!-- ===== 블로그 (카드 스토리) ===== -->
