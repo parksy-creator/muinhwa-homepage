@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>블로그 | 무인화연구소 무인창업 이야기</title>
+<meta name="description" content="스터디카페·독서실·무인창업 실전 정보. 창업비용, 가맹비, 순수익 구조, 폐업률, 양도양수까지 42개 직영·가맹 매장 데이터로 정리한 무인화연구소 블로그 글 모음입니다.">
+<meta name="keywords" content="무인창업,스터디카페 창업,독서실 창업,창업비용,가맹비,순수익,폐업률,관리형 스터디카페,무인화연구소 블로그">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://www.muinlab.io/blog/">
+<meta property="og:type" content="website"><meta property="og:site_name" content="무인화연구소">
+<meta property="og:title" content="블로그 | 무인화연구소 무인창업 이야기"><meta property="og:url" content="https://www.muinlab.io/blog/">
+<meta property="og:description" content="스터디카페·독서실·무인창업 실전 정보를 42개 매장 데이터로 정리했습니다.">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<style>
+:root{--paper:#F1F1EC;--ink:#1A1E1A;--muted:#5b625a;--green:#2E5A3E;--green-deep:#213f2c;--green-soft:#3E6B4A;--sage:#A9C48A;--lime:#C8F03C;--coral:#EF9A87;--coral-deep:#e5806a;--line:#e2e0d6}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Pretendard',-apple-system,BlinkMacSystemFont,'Malgun Gothic',sans-serif;color:var(--ink);background:var(--paper);line-height:1.65;-webkit-font-smoothing:antialiased}
+a{text-decoration:none;color:inherit}
+.wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+.btn{display:inline-flex;align-items:center;gap:8px;font-weight:800;border-radius:999px;padding:11px 20px;font-size:14px;cursor:pointer;border:none;transition:.2s}
+.btn-green{background:var(--green);color:#fff}.btn-green:hover{background:var(--green-deep);transform:translateY(-2px)}
+/* nav */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(241,241,236,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav .in{max-width:1160px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:900;font-size:19px;color:var(--ink)}
+.logo .mark{width:32px;height:32px;background:linear-gradient(135deg,var(--green),var(--lime));color:#fff;border-radius:8px;display:grid;place-items:center;font-size:11px;font-weight:900;letter-spacing:-1px}
+.menu{display:flex;gap:20px;list-style:none;align-items:center}
+.menu a{font-weight:700;font-size:14px;color:var(--ink)}.menu a:hover{color:var(--green)}.menu a.on{color:var(--green);border-bottom:2px solid var(--green);padding-bottom:2px}
+.nav-right{display:flex;align-items:center;gap:14px}.nav-tel{font-weight:800;font-size:15px}
+@media(max-width:1080px){.nav-tel{display:none}}@media(max-width:820px){.menu{display:none}}
+/* hero */
+.phero{padding:120px 0 58px;background:linear-gradient(160deg,#3E6B4A,#2E5A3E 55%,#213f2c);color:#fff;text-align:center}
+.phero .eb{color:var(--lime);font-weight:800;font-size:14px;letter-spacing:.06em}
+.phero h1{font-size:40px;font-weight:900;letter-spacing:-.03em;margin-top:12px;line-height:1.22}
+.phero p{color:#e7f3e5;font-size:17px;margin:14px auto 0;max-width:620px}
+.phero .crumb{margin-top:18px;font-size:13px;color:#cfe4cd}.phero .crumb a{color:#fff;font-weight:700}
+@media(max-width:640px){.phero h1{font-size:28px}.phero p{font-size:15px}}
+/* 검색 + 필터 */
+.tools{position:sticky;top:64px;z-index:60;background:rgba(241,241,236,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);padding:18px 0}
+.tools .in{max-width:1160px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chip{background:#fff;border:1px solid var(--line);color:var(--muted);font-weight:800;font-size:13px;padding:9px 16px;border-radius:999px;cursor:pointer;transition:.15s;font-family:inherit}
+.chip:hover{border-color:var(--sage);color:var(--ink)}
+.chip.on{background:var(--green);border-color:var(--green);color:#fff}
+.chip .n{opacity:.6;font-size:12px;margin-left:4px}
+.search{display:flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:8px 16px;min-width:280px}
+.search input{border:none;outline:none;font-family:inherit;font-size:14px;background:none;color:var(--ink);width:100%}
+.search input::placeholder{color:#9aa295}
+.search .ic{font-size:14px;opacity:.5}
+@media(max-width:700px){.search{min-width:100%;order:-1}}
+/* 카드 그리드 */
+.sec{padding:44px 0 78px}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:44px 28px}
+@media(max-width:1080px){.grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:820px){.grid{grid-template-columns:repeat(2,1fr);gap:34px 20px}}
+@media(max-width:520px){.grid{grid-template-columns:1fr}}
+.pcard{transition:.2s}
+.pcard.hide{display:none}
+.thumb{position:relative;aspect-ratio:1/1;overflow:hidden;border-radius:6px;background:linear-gradient(150deg,#dfe4da,#c3cdbd)}
+.thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .45s cubic-bezier(.2,.7,.3,1)}
+.pcard:hover .thumb img{transform:scale(1.06)}
+.badge{position:absolute;left:12px;bottom:12px;background:#111;color:#fff;font-size:11px;font-weight:800;letter-spacing:.08em;padding:5px 11px;border-radius:4px}
+.pcard h3{font-size:18px;font-weight:800;line-height:1.42;letter-spacing:-.02em;margin-top:18px;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;transition:.15s}
+.pcard:hover h3{color:var(--green)}
+.pcard p{color:var(--muted);font-size:14px;margin-top:9px;line-height:1.55;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.ptags{display:flex;gap:6px;flex-wrap:wrap;margin-top:14px}
+.ptags span{border:1px solid var(--coral);color:var(--coral-deep);font-size:12px;font-weight:700;padding:4px 11px;border-radius:999px;background:#fff}
+.pmeta{margin-top:12px;font-size:12px;color:#9aa295;font-weight:600}
+.empty{text-align:center;color:var(--muted);padding:70px 0;font-size:16px;display:none}
+.empty.on{display:block}
+.cnt{margin-bottom:26px;font-size:14px;color:var(--muted);font-weight:700}
+.cnt b{color:var(--ink)}
+/* CTA + footer */
+.cta{background:var(--green);color:#fff;text-align:center;padding:70px 0}
+.cta h2{font-size:28px;font-weight:900}.cta p{color:#d9ecd6;margin-top:10px}
+.cta .tel{margin-top:14px;font-size:22px;font-weight:900;color:var(--lime)}
+.cta .btn{margin-top:22px;background:var(--lime);color:var(--ink)}
+.cta .btn:hover{background:#b4e01f}
+.foot{background:var(--green-deep);color:#c9d3c4;padding:44px 0;font-size:14px}
+.foot .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.foot .logo{color:#fff}
+</style>
+</head>
+<body>
+
+<nav class="nav"><div class="in">
+  <a class="logo" href="index.html"><span class="mark">무인화</span>무인화연구소</a>
+  <ul class="menu">
+    <li><a href="무인화연구소-회사소개.html">회사소개</a></li>
+    <li><a class="on" href="무인화연구소-블로그.html">블로그</a></li>
+    <li><a href="무인화연구소-뉴스미디어.html">뉴스·미디어</a></li>
+    <li><a href="무인화연구소-솔루션.html">무인화 솔루션</a></li>
+    <li><a href="무인화연구소-창업.html">무인 창업</a></li>
+    <li><a href="무인화연구소-매장찾기.html">매장찾기</a></li>
+  </ul>
+  <div class="nav-right"><span class="nav-tel">📞 1811-9544</span><a href="무인화연구소-창업.html" class="btn btn-green">창업 상담</a></div>
+</div></nav>
+
+<header class="phero">
+  <div class="wrap">
+    <div class="eb">BLOG</div>
+    <h1>창업 전에 꼭 알아야 할<br>무인창업 이야기</h1>
+    <p>42개 직영·가맹 매장을 운영하며 확인한 사실만 정리했습니다. 창업비용부터 순수익 구조까지, 숫자로 판단하세요.</p>
+    <div class="crumb"><a href="index.html">홈</a> › 블로그</div>
+  </div>
+</header>
+
+<section class="tools"><div class="in">
+  <div class="chips">
+    <button class="chip on" data-f="all">전체<span class="n">28</span></button>
+    <button class="chip" data-f="study">스터디카페 창업<span class="n">18</span></button>
+    <button class="chip" data-f="unmanned">무인창업<span class="n">5</span></button>
+    <button class="chip" data-f="library">독서실·관리형<span class="n">5</span></button>
+  </div>
+  <label class="search">
+    <span class="ic">🔍</span>
+    <input type="text" id="q" placeholder="궁금한 무인창업 키워드를 검색하세요" autocomplete="off">
+  </label>
+</div></section>
+
+<main class="sec"><div class="wrap">
+  <div class="cnt">전체 <b id="shown">28</b>개 글</div>
+  <div class="grid" id="grid">
+      <article class="pcard" data-cat="library" data-key="독서실 창업비용, 40평 기준 항목별 정리 총액보다 '배분'이 회수기간을 가릅니다 (42개 매장 데이터) 독서실창업 창업비용 독서실·관리형">
+        <a href="https://muinlab.io/reading-room-startup-cost-design/" target="_blank" rel="noopener">
+          <div class="thumb">
+            <img src="https://muinlab.io/wp-content/uploads/2026/07/고비용-설계와-항아리-상권-효율-설계의-40평-독서실-좌석-수·임대료-비교-인포그래픽-e1784957430631.jpeg" alt="독서실 창업비용, 40평 기준 항목별 정리" loading="eager" decoding="async">
+            <span class="badge">BLOG</span>
+          </div>
+          <h3>독서실 창업비용, 40평 기준 항목별 정리</h3>
+          <p>총액보다 '배분'이 회수기간을 가릅니다 (42개 매장 데이터)</p>
+          <div class="ptags"><span>#독서실창업</span><span>#창업비용</span></div>
+          <div class="pmeta">2026.07.25 · 독서실·관리형</div>
+        </a>
+      </article>
+      <article class="pcard" data-cat="library" data-key="관리형 독서실 가격 총정리 (2026) 월 이용료·인강 혜택까지 따져야 진짜 비교됩니다 관리형독서실 가격비교 독서실·관리형">
+        <a href="https://muinlab.io/managed-library-price-guide-2026/" target="_blank" rel="noopener">
+          <div class="thumb">
+            <img src="https://muinlab.io/wp-content/uploads/2026/07/Empty_modern_study_library_interior.jpeg" alt="관리형 독서실 가격 총정리 (2026)" loading="eager" decoding="async">
+            <span class="badge">BLOG</span>
+          </div>
+          <h3>관리형 독서실 가격 총정리 (2026)</h3>
+          <p>월 이용료·인강 혜택까지 따져야 진짜 비교됩니다</p>
+          <div class="ptags"><span>#관리형독서실</span><span>#가격비교</span></div>
+          <div class="pmeta">2026.07.23 · 독서실·관리형</div>
+        </a>
+      </article>
+      <article class="pcard" data-cat="unmanned" data-key="무인창업 시작 가이드 본업을 유지하면서 가능한 투잡 소자본 무인 비즈니스 무인창업 투잡창업 무인창업">
+        <a href="https://muinlab.io/unattended-startup-guide/" target="_blank" rel="noopener">
+          <div class="thumb">
+            <img src="https://muinlab.io/wp-content/uploads/2026/05/hero-unattended-startup.webp" alt="무인창업 시작 가이드" loading="eager" decoding="async">
+            <span class="badge">BLOG</span>
+          </div>
+          <h3>무인창업 시작 가이드</h3>
+          <p>본업을 유지하면서 가능한 투잡 소자본 무인 비즈니스</p>
+          <div class="ptags"><span>#무인창업</span><span>#투잡창업</span></div>
+          <div class="pmeta">2026.07.22 · 무인창업</div>
+        </a>
+      </article>
+      <article class="pcard" data-cat="unmanned" data-key="1인 창업 아이템 7가지 현실 정리 (2026) 소자본·무인으로 혼자 시작하는 법 1인창업 소자본창업 무인창업">
+        <a href="https://muinlab.io/solo-startup-items-2026/" target="_blank" rel="noopener">
+          <div class="thumb">
+            <img src="https://muinlab.io/wp-content/uploads/2026/07/혼자-소자본-무인으로-1인-창업-아이템을-준비하는-예비-창업자의-미니멀-워크스페이스.jpeg" alt="1인 창업 아이템 7가지 현실 정리 (2026)" loading="eager" decoding="async">
+            <span class="badge">BLOG</span>
+          </div>
+          <h3>1인 창업 아이템 7가지 현실 정리 (2026)</h3>
+          <p>소자본·무인으로 혼자 시작하는 법</p>
+          <div class="ptags"><span>#1인창업</span><span>#소자본창업</span></div>
+          <div class="pmeta">2026.07.21 · 무인창업</div>
+        </a>
+      </article>
+      <article class="pcard" data-cat="library" data-key="스터디카페 vs 독서실 차이 총정리 (2026) 창업자가 놓치는 운영비·수익 구조 스터디카페 독서실비교 독서실·관리형">
+        <a href="https://muinlab.io/study-cafe-vs-reading-room/" target="_blank" rel="noopener">
+          <div class="thumb">
+            <img src="https://muinlab.io/wp-content/uploads/2026/07/스터디카페와-독서실-차이점-살펴보기.jpeg" alt="스터디카페 vs 독서실 차이 총정리 (2026)" loading="lazy" decoding="async">
+            <span class="badge">BLOG</span>
+          </div>
+          <h3>스터디카페 vs 독서실 차이 총정리 (2026)</h3>
+          <p>창업자가 놓치는 운영비·수익 구조</p>
+          <div class="ptags"><span>#스터디카페</span><span>#독서실비교</span></div>
+          <div class="pmeta">2026.07.21 · 독서실·관리형</div>
+        </a>
+      </article>
+      <article class="pcard" data-cat="study" data-key="스터디카페 가격 정책의 비밀 시간당 단가 설계가 수익을 결정합니다 가격정책 수익구조 스터디카페 창업">
+        <a href="https://muinlab.io/study-cafe-pricing/" target="_blank" rel="noopener">
+          <div class="thumb">
+            <img src="https://muinlab.io/wp-content/uploads/2026/05/hero-study-cafe-pricing.webp" alt="스터디카페 가격 정책의 비밀" loading="lazy" decoding="async">
+            <span class="badge">BLOG</span>
+          </div>
+          <h3>스터디카페 가격 정책의 비밀</h3>
+          <p>시간당 단가 설계가 수익을 결정합니다</p>
+          <div class="ptags"><span>#가격정책</span><span>#수익구조</span></div>
+          <div class="pmeta">2026.05.28 · 스터디카페 창업</div>
+        </a>
+      </article>
+      <article class="pcard" data-cat="library" data-key="관리형 독서실에서 관리형 스터디카페로 무엇이, 왜 바뀌었나 관리형스터디카페 시장변화 독서실·관리형">
+        <a href="https://muinlab.io/managed-library-evolution/" target="_blank" rel="noopener">
+          <div class="thumb">
+            <img src="https://muinlab.io/wp-content/uploads/2026/05/hero-managed-library-evolution.webp" alt="관리형 독서실에서 관리형 스터디카페로" loading="lazy" decoding="async">
+            <span class="badge">BLOG</span>
+          </div>
+          <h3>관리형 독서실에서 관리형 스터디카페로</h3>
+          <p>무엇이, 왜 바뀌었나</p>
+          <div class="ptags"><span>#관리형스터디카페</span><span>#시장변화</span></div>
+          <div class="pmeta">2026.05.28 · 독서실·관리형</div>
+        </a>
+      </article>
+      <article class="pcard" data-cat="library" data-key="관리형 스터디카페란 무인과 관리형의 결정적 차이 관리형스터디카페 무인매장 독서실·관리형">
+        <a href="https://muinlab.io/managed-study-cafe/" target="_blank" rel="noopener">
+          <div class="thumb">
+            <img src="https://muinlab.io/wp-content/uploads/2026/05/hero-managed-study-cafe.webp" alt="관리형 스터디카페란" loading="lazy" decoding="async">
+            <span class="badge">BLOG</span>
+          </div>
+          <h3>관리형 스터디카페란</h3>
+          <p>무인과 관리형의 결정적 차이</p>
+          <div class="ptags"><span>#관리형스터디카페</span><span>#무인매장</span></div>
+          <div class="pmeta">2026.05.19 · 독서실·관리형</div>
+        </a>
+      </article>
+      <article class="pcard" data-cat="study" data-key="스터디카페 순수익 창업 전 필독 월 매출 2,000만 원 광고에 숨은 진짜 순수익 순수익 창업전필독 스터디카페 창업">
+        <a href="https://muinlab.io/%ec%8a%a4%ed%84%b0%eb%94%94%ec%b9%b4%ed%8e%98-%ec%88%9c%ec%88%98%ec%9d%b5-%ec%b0%bd%ec%97%85-%ec%a0%84-%ed%95%84%eb%8f%85/" target="_blank" rel="noopener">
+          <div class="thumb">
+            <img src="https://muinlab.io/wp-content/uploads/2026/04/stage_3_True-Financial-Freedom.jpg" alt="스터디카페 순수익 창업 전 필독" loading="lazy" decoding="async">
+            <span class="badge">BLOG</span>
+          </div>
+          <h3>스터디카페 순수익 창업 전 필독</h3>
+          <p>월 매출 2,000만 원 광고에 숨은 진짜 순수익</p>
+          <div class="ptags"><span>#순수익</span><span>#창업전필독</span></div>
+          <div class="pmeta">2026.04.08 · 스터디카페 창업</div>
+        </a>
+      </article>
+      <article class="pcard" data-cat="study" data-key="스터디카페 창업비용 분석 월 순수익 700만 원 돌파를 위한 셋팅 창업비용 순수익 스터디카페 창업">
+        <a href="https://muinlab.io/%ec%8a%a4%ed%84%b0%eb%94%94%ec%b9%b4%ed%8e%98-%ec%b0%bd%ec%97%85%eb%b9%84%ec%9a%a9-%ec%99%84%ec%a0%84-%ea%b0%80%ec%9d%b4%eb%93%9c/" target="_blank" rel="noopener">
+          <div class="thumb">
+            <img src="https://muinlab.io/wp-content/uploads/2026/04/stage_2_데이터-기반의-스마트한-공간-설계.jpg" alt="스터디카페 창업비용 분석" loading="lazy" decoding="async">
+            <span class="badge">BLOG</span>
+          </div>
+          <h3>스터디카페 창업비용 분석</h3>
+          <p>월 순수익 700만 원 돌파를 위한 셋팅</p>
+          <div class="ptags"><span>#창업비용</span><span>#순수익</span></div>
+          <div class="pmeta">2026.04.08 · 스터디카페 창업</div>
+        </a>
+      </article>
+      <article class="pcard" data-cat="study" data-key="스터디카페 창업대출 전략 점주 자금 부담을 최소화하는 방법 창업대출 자금계획 스터디카페 창업">
+        <a href="https://muinlab.io/%ec%8a%a4%ed%84%b0%eb%94%94%ec%b9%b4%ed%8e%98-%ec%b0%bd%ec%97%85%eb%8c%80%ec%b6%9c-%ec%a0%84%eb%9e%b5-%ec%a0%90%ec%a3%bc-%ec%9e%90%ea%b8%88-%eb%b6%80%eb%8b%b4-%ec%b5%9c%ec%86%8c%ed%99%94-%eb%b0%a9/" target="_blank" rel="noopener">
+          <div class="thumb">
+            <img src="https://muinlab.io/wp-content/uploads/2026/04/stage_2_데이터와-기술로-설계하는-수익-구조.jpg" alt="스터디카페 창업대출 전략" loading="lazy" decoding="async">
+            <span class="badge">BLOG</span>
+          </div>
+          <h3>스터디카페 창업대출 전략</h3>
+          <p>점주 자금 부담을 최소화하는 방법</p>
+          <div class="ptags"><span>#창업대출</span><span>#자금계획</span></div>
+          <div class="pmeta">2026.04.07 · 스터디카페 창업</div>
+        </a>
+      </article>
+      <article class="pcard" data-cat="unmanned" data-key="무인스터디카페 창업비용, 초기비용과 수익 구조 낡은 독서실 헐값 인수가 위험한 이유 무인스터디카페 창업비용 무인창업">
+        <a href="https://muinlab.io/%eb%ac%b4%ec%9d%b8%ec%8a%a4%ed%84%b0%eb%94%94%ec%b9%b4%ed%8e%98-%ec%b0%bd%ec%97%85%eb%b9%84%ec%9a%a9-%ec%b4%88%ea%b8%b0%eb%b9%84%ec%9a%a9%ea%b3%bc-%ec%88%98%ec%9d%b5-%ea%b5%ac%ec%a1%b0/" target="_blank" rel="noopener">
+          <div class="thumb">
+            <img src="https://muinlab.io/wp-content/uploads/2026/04/stage_2_공간의-혁신-하이브리드-설계.jpg" alt="무인스터디카페 창업비용, 초기비용과 수익 구조" loading="lazy" decoding="async">
+            <span class="badge">BLOG</span>
+          </div>
+          <h3>무인스터디카페 창업비용, 초기비용과 수익 구조</h3>
+          <p>낡은 독서실 헐값 인수가 위험한 이유</p>
+          <div class="ptags"><span>#무인스터디카페</span><span>#창업비용</span></div>
+          <div class="pmeta">2026.04.07 · 무인창업</div>
+        </a>
+      </article>
+      <article class="pcard" data-cat="study" data-key="스터디카페 가맹비 비교 분석 점주 수익을 최우선으로 설계하는 이유 가맹비 프랜차이즈 스터디카페 창업">
+        <a href="https://muinlab.io/%ec%8a%a4%ed%84%b0%eb%94%94%ec%b9%b4%ed%8e%98-%ea%b0%80%eb%a7%b9%eb%b9%84-%eb%b9%84%ea%b5%90-%eb%b6%84%ec%84%9d-%ec%a0%90%ec%a3%bc-%ec%88%98%ec%9d%b5%ec%9d%84-%ec%b5%9c%ec%9a%b0%ec%84%a0%ec%9c%bc/" target="_blank" rel="noopener">
+          <div class="thumb">
+            <img src="https://muinlab.io/wp-content/uploads/2026/03/스터디카페-가맹비-비교분석.jpg" alt="스터디카페 가맹비 비교 분석" loading="lazy" decoding="async">
+            <span class="badge">BLOG</span>
+          </div>
+          <h3>스터디카페 가맹비 비교 분석</h3>
+          <p>점주 수익을 최우선으로 설계하는 이유</p>
+          <div class="ptags"><span>#가맹비</span><span>#프랜차이즈</span></div>
+          <div class="pmeta">2026.03.28 · 스터디카페 창업</div>
+        </a>
+      </article>
+      <article class="pcard" data-cat="study" data-key="프리미엄 스터디카페 창업, 화려하고 우아하기만 할까요? 인테리어보다 먼저 확인해야 할 수익률 프리미엄 수익률 스터디카페 창업">
+        <a href="https://muinlab.io/%ed%94%84%eb%a6%ac%eb%af%b8%ec%97%84-%ec%8a%a4%ed%84%b0%eb%94%94%ec%b9%b4%ed%8e%98-%ec%b0%bd%ec%97%85-%ed%99%94%eb%a0%a4%ed%95%98%ea%b3%a0-%ec%9a%b0%ec%95%84%ed%95%98%ea%b8%b0%eb%a7%8c-%ed%95%a0/" target="_blank" rel="noopener">
+          <div class="thumb">
+            <img src="https://muinlab.io/wp-content/uploads/2026/03/무인스터디카페-수익률.jpg" alt="프리미엄 스터디카페 창업, 화려하고 우아하기만 할까요?" loading="lazy" decoding="async">
+            <span class="badge">BLOG</span>
+          </div>
+          <h3>프리미엄 스터디카페 창업, 화려하고 우아하기만 할까요?</h3>
+          <p>인테리어보다 먼저 확인해야 할 수익률</p>
+          <div class="ptags"><span>#프리미엄</span><span>#수익률</span></div>
+          <div class="pmeta">2026.03.28 · 스터디카페 창업</div>
+        </a>
+      </article>
+      <article class="pcard" data-cat="study" data-key="스터디카페 양도양수 전략 엑시트 준비까지 본사와 함께 양도양수 엑시트 스터디카페 창업">
+        <a href="https://muinlab.io/%ec%8a%a4%ed%84%b0%eb%94%94%ec%b9%b4%ed%8e%98-%ec%96%91%eb%8f%84%ec%96%91%ec%88%98-%ec%a0%84%eb%9e%b5-%ec%97%91%ec%8b%9c%ed%8a%b8-%ec%a4%80%eb%b9%84%ea%b9%8c%ec%a7%80-%eb%b3%b8%ec%82%ac%ec%99%80/" target="_blank" rel="noopener">
+          <div class="thumb">
+            <img src="https://muinlab.io/wp-content/uploads/2026/03/스터디카페-사후시스템.jpg" alt="스터디카페 양도양수 전략" loading="lazy" decoding="async">
+            <span class="badge">BLOG</span>
+          </div>
+          <h3>스터디카페 양도양수 전략</h3>
+          <p>엑시트 준비까지 본사와 함께</p>
+          <div class="ptags"><span>#양도양수</span><span>#엑시트</span></div>
+          <div class="pmeta">2026.03.27 · 스터디카페 창업</div>
+        </a>
+      </article>
+      <article class="pcard" data-cat="study" data-key="스터디카페 폐업률 창업 전 필독 본사가 폐점 0%를 유지하는 비결 폐업률 폐점0 스터디카페 창업">
+        <a href="https://muinlab.io/%ec%8a%a4%ed%84%b0%eb%94%94%ec%b9%b4%ed%8e%98-%ed%8f%90%ec%97%85%eb%a5%a0-%ec%b0%bd%ec%97%85-%ec%a0%84-%ed%95%84%eb%8f%85-%eb%b3%b8%ec%82%ac%ea%b0%80-%ed%8f%90%ec%a0%90-0%eb%a5%bc-%ec%9c%a0%ec%a7%80/" target="_blank" rel="noopener">
+          <div class="thumb">
+            <img src="https://muinlab.io/wp-content/uploads/2026/03/스터디카페-무인자동화.jpg" alt="스터디카페 폐업률 창업 전 필독" loading="lazy" decoding="async">
+            <span class="badge">BLOG</span>
+          </div>
+          <h3>스터디카페 폐업률 창업 전 필독</h3>
+          <p>본사가 폐점 0%를 유지하는 비결</p>
+          <div class="ptags"><span>#폐업률</span><span>#폐점0</span></div>
+          <div class="pmeta">2026.03.27 · 스터디카페 창업</div>
+        </a>
+      </article>
+      <article class="pcard" data-cat="study" data-key="스터디카페 인테리어 비용 평당 단가부터 총공사비까지 인테리어비용 평당단가 스터디카페 창업">
+        <a href="https://muinlab.io/%ec%8a%a4%ed%84%b0%eb%94%94%ec%b9%b4%ed%8e%98-%ec%9d%b8%ed%85%8c%eb%a6%ac%ec%96%b4-%eb%b9%84%ec%9a%a9-%ed%8f%89%eb%8b%b9-%eb%8b%a8%ea%b0%80%eb%b6%80%ed%84%b0-%ec%b4%9d%ea%b3%b5%ec%82%ac%eb%b9%84/" target="_blank" rel="noopener">
+          <div class="thumb">
+            <img src="https://muinlab.io/wp-content/uploads/2026/03/스터디카페-인테리어공사.jpg" alt="스터디카페 인테리어 비용" loading="lazy" decoding="async">
+            <span class="badge">BLOG</span>
+          </div>
+          <h3>스터디카페 인테리어 비용</h3>
+          <p>평당 단가부터 총공사비까지</p>
+          <div class="ptags"><span>#인테리어비용</span><span>#평당단가</span></div>
+          <div class="pmeta">2026.03.27 · 스터디카페 창업</div>
+        </a>
+      </article>
+      <article class="pcard" data-cat="unmanned" data-key="무인창업 치트키 7가지 월 700만 원 오토수익의 비밀 무인창업 오토수익 무인창업">
+        <a href="https://muinlab.io/%eb%ac%b4%ec%9d%b8%ec%b0%bd%ec%97%85-%ec%b9%98%ed%8a%b8%ed%82%a4-7%ea%b0%80%ec%a7%80-%ec%9b%94-800%eb%a7%8c%ec%9b%90-%ec%98%a4%ed%86%a0%ec%88%98%ec%9d%b5%ec%9d%98-%eb%b9%84%eb%b0%80/" target="_blank" rel="noopener">
+          <div class="thumb">
+            <img src="https://muinlab.io/wp-content/uploads/2026/03/무인창업고민-무인스터디카페.jpg" alt="무인창업 치트키 7가지" loading="lazy" decoding="async">
+            <span class="badge">BLOG</span>
+          </div>
+          <h3>무인창업 치트키 7가지</h3>
+          <p>월 700만 원 오토수익의 비밀</p>
+          <div class="ptags"><span>#무인창업</span><span>#오토수익</span></div>
+          <div class="pmeta">2026.03.01 · 무인창업</div>
+        </a>
+      </article>
+      <article class="pcard" data-cat="study" data-key="스터디카페 순수익 공개 점주가 월 900만 원 순수익을 만드는 구조 순수익 점주사례 스터디카페 창업">
+        <a href="https://muinlab.io/%ec%8a%a4%ed%84%b0%eb%94%94%ec%b9%b4%ed%8e%98-%ec%88%9c%ec%88%98%ec%9d%b5-%ea%b3%b5%ea%b0%9c-%ec%8b%a4%ec%a0%9c-%ec%a0%90%ec%a3%bc%ea%b0%80-%ec%9b%94-800%eb%a7%8c-%ec%9b%90-%ec%88%9c%ec%88%98/" target="_blank" rel="noopener">
+          <div class="thumb">
+            <img src="https://muinlab.io/wp-content/uploads/2026/03/무인스터디카페-매출액-1.jpg" alt="스터디카페 순수익 공개" loading="lazy" decoding="async">
+            <span class="badge">BLOG</span>
+          </div>
+          <h3>스터디카페 순수익 공개</h3>
+          <p>점주가 월 900만 원 순수익을 만드는 구조</p>
+          <div class="ptags"><span>#순수익</span><span>#점주사례</span></div>
+          <div class="pmeta">2026.03.01 · 스터디카페 창업</div>
+        </a>
+      </article>
+      <article class="pcard" data-cat="study" data-key="스터디카페 프랜차이즈 창업 전략 점주 수익을 극대화하는 기준 프랜차이즈 창업전략 스터디카페 창업">
+        <a href="https://muinlab.io/%ec%8a%a4%ed%84%b0%eb%94%94%ec%b9%b4%ed%8e%98-%ed%94%84%eb%9e%9c%ec%b0%a8%ec%9d%b4%ec%a6%88-%ec%b0%bd%ec%97%85-%ec%a0%84%eb%9e%b5-%ec%a0%90%ec%a3%bc-%ec%88%98%ec%9d%b5-%ea%b7%b9%eb%8c%80%ed%99%94/" target="_blank" rel="noopener">
+          <div class="thumb">
+            <img src="https://muinlab.io/wp-content/uploads/2026/03/무인스터디카페-자동화.jpg" alt="스터디카페 프랜차이즈 창업 전략" loading="lazy" decoding="async">
+            <span class="badge">BLOG</span>
+          </div>
+          <h3>스터디카페 프랜차이즈 창업 전략</h3>
+          <p>점주 수익을 극대화하는 기준</p>
+          <div class="ptags"><span>#프랜차이즈</span><span>#창업전략</span></div>
+          <div class="pmeta">2026.03.01 · 스터디카페 창업</div>
+        </a>
+      </article>
+      <article class="pcard" data-cat="study" data-key="스터디카페 양도양수 가이드 처음부터 기획이 중요합니다 양도양수 매각기획 스터디카페 창업">
+        <a href="https://muinlab.io/%ec%8a%a4%ed%84%b0%eb%94%94%ec%b9%b4%ed%8e%98-%ec%96%91%eb%8f%84%ec%96%91%ec%88%98-%ec%99%84%ec%a0%84-%ea%b0%80%ec%9d%b4%eb%93%9c-%ec%8b%a4%ec%a0%9c-%ec%a0%90%ec%a3%bc%ea%b0%80-%eb%a7%a4%ec%9e%a5/" target="_blank" rel="noopener">
+          <div class="thumb">
+            <img src="https://muinlab.io/wp-content/uploads/2026/02/스터디카페-수익률.png" alt="스터디카페 양도양수 가이드" loading="lazy" decoding="async">
+            <span class="badge">BLOG</span>
+          </div>
+          <h3>스터디카페 양도양수 가이드</h3>
+          <p>처음부터 기획이 중요합니다</p>
+          <div class="ptags"><span>#양도양수</span><span>#매각기획</span></div>
+          <div class="pmeta">2026.02.28 · 스터디카페 창업</div>
+        </a>
+      </article>
+      <article class="pcard" data-cat="study" data-key="프리미엄 스터디카페 창업 전 필독 폐점률 0% 브랜드가 포화 시장에서 성장하는 이유 프리미엄 포화시장 스터디카페 창업">
+        <a href="https://muinlab.io/%ed%94%84%eb%a6%ac%eb%af%b8%ec%97%84-%ec%8a%a4%ed%84%b0%eb%94%94%ec%b9%b4%ed%8e%98-%ec%b0%bd%ec%97%85-%ec%a0%84-%ed%95%84%eb%8f%85-%ed%8f%90%ec%a0%90%eb%a5%a0-0-%eb%b8%8c%eb%9e%9c%eb%93%9c%ea%b0%80/" target="_blank" rel="noopener">
+          <div class="thumb">
+            <img src="https://muinlab.io/wp-content/uploads/2026/02/무인스터디카페-창업비용.png" alt="프리미엄 스터디카페 창업 전 필독" loading="lazy" decoding="async">
+            <span class="badge">BLOG</span>
+          </div>
+          <h3>프리미엄 스터디카페 창업 전 필독</h3>
+          <p>폐점률 0% 브랜드가 포화 시장에서 성장하는 이유</p>
+          <div class="ptags"><span>#프리미엄</span><span>#포화시장</span></div>
+          <div class="pmeta">2026.02.27 · 스터디카페 창업</div>
+        </a>
+      </article>
+      <article class="pcard" data-cat="study" data-key="스터디카페 인테리어 비용 공개 프리미엄 공간을 합리적으로 완성하는 법 인테리어비용 견적 스터디카페 창업">
+        <a href="https://muinlab.io/%ec%8a%a4%ed%84%b0%eb%94%94%ec%b9%b4%ed%8e%98-%ec%9d%b8%ed%85%8c%eb%a6%ac%ec%96%b4-%eb%b9%84%ec%9a%a9-%eb%82%b1%eb%82%b1%ec%9d%b4-%ea%b3%b5%ea%b0%9c-%ec%8b%a4%ec%a0%9c-%ec%a0%90%ec%a3%bc%ea%b0%80/" target="_blank" rel="noopener">
+          <div class="thumb">
+            <img src="https://muinlab.io/wp-content/uploads/2026/02/stage_3_진정한-자유와-여유로운-삶.jpg" alt="스터디카페 인테리어 비용 공개" loading="lazy" decoding="async">
+            <span class="badge">BLOG</span>
+          </div>
+          <h3>스터디카페 인테리어 비용 공개</h3>
+          <p>프리미엄 공간을 합리적으로 완성하는 법</p>
+          <div class="ptags"><span>#인테리어비용</span><span>#견적</span></div>
+          <div class="pmeta">2026.02.27 · 스터디카페 창업</div>
+        </a>
+      </article>
+      <article class="pcard" data-cat="study" data-key="본사의 스터디카페 가맹비 내역 점주 수익을 최우선으로 한 구조 가맹비 본사공개 스터디카페 창업">
+        <a href="https://muinlab.io/%eb%b3%b8%ec%82%ac%ea%b0%80-%ec%a7%81%ec%a0%91-%ea%b3%b5%ea%b0%9c%ed%95%98%eb%8a%94-%ec%8a%a4%ed%84%b0%eb%94%94%ec%b9%b4%ed%8e%98-%ea%b0%80%eb%a7%b9%eb%b9%84-%ec%83%81%ec%84%b8-%eb%82%b4%ec%97%ad/" target="_blank" rel="noopener">
+          <div class="thumb">
+            <img src="https://muinlab.io/wp-content/uploads/2026/02/스터디카페-자동화수익시스템.jpg" alt="본사의 스터디카페 가맹비 내역" loading="lazy" decoding="async">
+            <span class="badge">BLOG</span>
+          </div>
+          <h3>본사의 스터디카페 가맹비 내역</h3>
+          <p>점주 수익을 최우선으로 한 구조</p>
+          <div class="ptags"><span>#가맹비</span><span>#본사공개</span></div>
+          <div class="pmeta">2026.02.27 · 스터디카페 창업</div>
+        </a>
+      </article>
+      <article class="pcard" data-cat="study" data-key="스터디카페 폐업률 현실 42개 매장 폐점 0%가 가능한 이유 폐업률 42개매장 스터디카페 창업">
+        <a href="https://muinlab.io/%ec%8b%a4%ec%a0%9c-%ec%a0%90%ec%a3%bc%ea%b0%80-%ec%a7%81%ec%a0%91-%ea%b3%b5%ea%b0%9c%ed%95%98%eb%8a%94-%ec%8a%a4%ed%84%b0%eb%94%94%ec%b9%b4%ed%8e%98-%ed%8f%90%ec%97%85%eb%a5%a0-%ed%98%84%ec%8b%a4-4/" target="_blank" rel="noopener">
+          <div class="thumb">
+            <img src="https://muinlab.io/wp-content/uploads/2026/02/3.-스터디카페-가맹비-1.jpg" alt="스터디카페 폐업률 현실" loading="lazy" decoding="async">
+            <span class="badge">BLOG</span>
+          </div>
+          <h3>스터디카페 폐업률 현실</h3>
+          <p>42개 매장 폐점 0%가 가능한 이유</p>
+          <div class="ptags"><span>#폐업률</span><span>#42개매장</span></div>
+          <div class="pmeta">2026.02.27 · 스터디카페 창업</div>
+        </a>
+      </article>
+      <article class="pcard" data-cat="unmanned" data-key="점주가 공개하는 무인스터디카페 창업비용 초기비용부터 월 순수익까지 무인스터디카페 점주사례 무인창업">
+        <a href="https://muinlab.io/%ec%8b%a4%ec%a0%9c-%ec%a0%90%ec%a3%bc%ea%b0%80-%ec%a7%81%ec%a0%91-%ea%b3%b5%ea%b0%9c%ed%95%98%eb%8a%94-%eb%ac%b4%ec%9d%b8%ec%8a%a4%ed%84%b0%eb%94%94%ec%b9%b4%ed%8e%98-%ec%b0%bd%ec%97%85%eb%b9%84/" target="_blank" rel="noopener">
+          <div class="thumb">
+            <img src="https://muinlab.io/wp-content/uploads/2026/02/3.-스터디카페-월수익.jpg" alt="점주가 공개하는 무인스터디카페 창업비용" loading="lazy" decoding="async">
+            <span class="badge">BLOG</span>
+          </div>
+          <h3>점주가 공개하는 무인스터디카페 창업비용</h3>
+          <p>초기비용부터 월 순수익까지</p>
+          <div class="ptags"><span>#무인스터디카페</span><span>#점주사례</span></div>
+          <div class="pmeta">2026.02.27 · 무인창업</div>
+        </a>
+      </article>
+      <article class="pcard" data-cat="study" data-key="스터디카페 창업대출 활용법 예비 점주의 자금 부담을 줄이는 현실적 전략 창업대출 자금부담 스터디카페 창업">
+        <a href="https://muinlab.io/%eb%b3%b8%ec%82%ac%ea%b0%80-%ec%a7%81%ec%a0%91-%ea%b3%b5%ea%b0%9c%ed%95%98%eb%8a%94-%ec%8a%a4%ed%84%b0%eb%94%94%ec%b9%b4%ed%8e%98-%ec%b0%bd%ec%97%85%eb%8c%80%ec%b6%9c-%ed%99%9c%ec%9a%a9%eb%b2%95/" target="_blank" rel="noopener">
+          <div class="thumb">
+            <img src="https://muinlab.io/wp-content/uploads/2026/02/스터디카페-인테리어비용.jpg" alt="스터디카페 창업대출 활용법" loading="lazy" decoding="async">
+            <span class="badge">BLOG</span>
+          </div>
+          <h3>스터디카페 창업대출 활용법</h3>
+          <p>예비 점주의 자금 부담을 줄이는 현실적 전략</p>
+          <div class="ptags"><span>#창업대출</span><span>#자금부담</span></div>
+          <div class="pmeta">2026.02.27 · 스터디카페 창업</div>
+        </a>
+      </article>
+      <article class="pcard" data-cat="study" data-key="스터디카페 프랜차이즈 선택 전 체크리스트 폐점률 0%를 유지하는 운영 지원 시스템 프랜차이즈 체크리스트 스터디카페 창업">
+        <a href="https://muinlab.io/%ec%8a%a4%ed%84%b0%eb%94%94%ec%b9%b4%ed%8e%98-%ed%94%84%eb%9e%9c%ec%b0%a8%ec%9d%b4%ec%a6%88-%ec%84%a0%ed%83%9d-%ec%a0%84-%ec%b2%b4%ed%81%ac%eb%a6%ac%ec%8a%a4%ed%8a%b8-%ea%b2%80%ec%a6%9d%eb%90%9c/" target="_blank" rel="noopener">
+          <div class="thumb">
+            <img src="https://muinlab.io/wp-content/uploads/2026/02/무인스터디카페-성공.jpg" alt="스터디카페 프랜차이즈 선택 전 체크리스트" loading="lazy" decoding="async">
+            <span class="badge">BLOG</span>
+          </div>
+          <h3>스터디카페 프랜차이즈 선택 전 체크리스트</h3>
+          <p>폐점률 0%를 유지하는 운영 지원 시스템</p>
+          <div class="ptags"><span>#프랜차이즈</span><span>#체크리스트</span></div>
+          <div class="pmeta">2026.02.27 · 스터디카페 창업</div>
+        </a>
+      </article>
+  </div>
+  <div class="empty" id="empty">검색 결과가 없습니다. 다른 키워드로 찾아보세요.</div>
+</div></main>
+
+<section class="cta"><div class="wrap">
+  <h2>글로는 부족하셨나요?</h2>
+  <p>내 상황에 맞는 창업 방식은 1:1 상담에서 더 정확해집니다.</p>
+  <div class="tel">📞 1811-9544</div>
+  <a href="무인화연구소-창업.html" class="btn">무료 창업 상담 신청</a>
+</div></section>
+
+<footer class="foot"><div class="wrap">
+  <div>
+    <div class="logo" style="font-size:17px;margin-bottom:8px">무인화연구소</div>
+    (주)무인화연구소 · 서울 올림픽로32길 32, 305호<br>대표전화 1811-9544 · biz@muinlab.io
+  </div>
+  <div>© 2026 무인화연구소. All rights reserved.</div>
+</div></footer>
+
+<script>
+(function(){
+  var cards = Array.prototype.slice.call(document.querySelectorAll('.pcard'));
+  var chips = Array.prototype.slice.call(document.querySelectorAll('.chip'));
+  var q = document.getElementById('q');
+  var shown = document.getElementById('shown');
+  var empty = document.getElementById('empty');
+  var cat = 'all';
+
+  function apply(){
+    var kw = q.value.trim().toLowerCase();
+    var n = 0;
+    cards.forEach(function(c){
+      var okCat = cat === 'all' || c.dataset.cat === cat;
+      var okKw = !kw || c.dataset.key.toLowerCase().indexOf(kw) > -1;
+      var ok = okCat && okKw;
+      c.classList.toggle('hide', !ok);
+      if(ok) n++;
+    });
+    shown.textContent = n;
+    empty.classList.toggle('on', n === 0);
+  }
+
+  chips.forEach(function(ch){
+    ch.addEventListener('click', function(){
+      chips.forEach(function(x){ x.classList.remove('on'); });
+      ch.classList.add('on');
+      cat = ch.dataset.f;
+      apply();
+    });
+  });
+  q.addEventListener('input', apply);
+})();
+</script>
+</body>
+</html>
