@@ -193,6 +193,20 @@ a{text-decoration:none;color:inherit}
 .float a{padding:14px 20px;border-radius:999px;font-weight:800;font-size:15px;box-shadow:0 8px 24px rgba(0,0,0,.25);display:flex;align-items:center;gap:8px}
 .float .kakao{background:#FEE500;color:#3a1d1d}
 .float .call{background:var(--red);color:#fff}
+
+/* ===== 모바일 메뉴 ===== */
+.navtoggle{display:none;background:none;border:none;font-family:inherit;font-size:22px;line-height:1;color:var(--ink);cursor:pointer;padding:6px 2px}
+@media(max-width:860px){
+  .navtoggle{display:block}
+  .nav.open .menu{display:flex;flex-direction:column;align-items:stretch;gap:0;position:absolute;left:0;right:0;top:100%;
+    background:#F1F1EC;border-bottom:1px solid var(--line);padding:4px 20px 14px;box-shadow:0 16px 34px rgba(0,0,0,.12);
+    max-height:calc(100vh - 64px);overflow-y:auto}
+  .nav.open .menu li{border-top:1px solid var(--line)}
+  .nav.open .menu li:first-child{border-top:none}
+  .nav.open .menu a{display:block;padding:14px 2px;font-size:15.5px}
+  .nav.open .menu a.on{border-bottom:none}
+}
+@media(max-width:390px){.nav .btn{padding:9px 13px;font-size:13px}}
 </style>
 </head>
 <body>
@@ -201,7 +215,7 @@ a{text-decoration:none;color:inherit}
 <nav class="nav">
   <div class="wrap">
     <div class="logo"><span class="mark">AN</span>앤딩워크라운지</div>
-    <ul class="menu">
+    <ul class="menu" id="navmenu">
       <li><a href="#pain">공실 고민</a></li>
       <li><a href="#vs">수익 비교</a></li>
       <li><a href="#unmanned">무인 운영</a></li>
@@ -211,7 +225,7 @@ a{text-decoration:none;color:inherit}
     <div class="nav-right">
       <span class="nav-tel">📞 1811-9544</span>
       <a href="#form" class="btn btn-green">공실 수익 진단</a>
-    </div>
+    <button class="navtoggle" type="button" aria-label="메뉴 열기" aria-expanded="false" aria-controls="navmenu">☰</button></div>
   </div>
 </nav>
 
@@ -475,5 +489,22 @@ a{text-decoration:none;color:inherit}
   <a class="call" href="tel:18119544">📞 전화 문의</a>
 </div>
 
+
+<script>
+/* 모바일 메뉴 토글 */
+(function(){
+  var n=document.querySelector('.nav'), b=n&&n.querySelector('.navtoggle');
+  if(!b)return;
+  b.addEventListener('click',function(){
+    var open=n.classList.toggle('open');
+    b.textContent=open?'\u2715':'\u2630';
+    b.setAttribute('aria-expanded',open);
+    b.setAttribute('aria-label',open?'메뉴 닫기':'메뉴 열기');
+  });
+  window.addEventListener('resize',function(){
+    if(window.innerWidth>960&&n.classList.contains('open')){n.classList.remove('open');b.textContent='\u2630';b.setAttribute('aria-expanded',false);}
+  });
+})();
+</script>
 </body>
 </html>
