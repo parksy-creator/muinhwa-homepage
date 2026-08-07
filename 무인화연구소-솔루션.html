@@ -60,16 +60,6 @@ a{text-decoration:none;color:inherit}
 .phero .crumb a{color:#fff;font-weight:700}
 @media(max-width:640px){.phero h1{font-size:32px}}
 
-/* 히어로 소개 영상 */
-.hero-video{max-width:900px;margin:44px auto 8px;padding:0 24px;position:relative;z-index:5}
-.vid{position:relative;aspect-ratio:16/9;border-radius:18px;overflow:hidden;background:#0e1a12;box-shadow:0 28px 66px rgba(33,63,44,.28);border:1px solid rgba(255,255,255,.08)}
-.vid iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
-.vid .ph-play{position:absolute;inset:0;display:grid;place-items:center;cursor:pointer;background:radial-gradient(circle at 50% 38%,#1f4a30,#0e1a12 70%)}
-.vid .ph-play .btn-play{width:84px;height:84px;border-radius:50%;background:rgba(255,255,255,.15);border:2px solid rgba(255,255,255,.75);display:grid;place-items:center;font-size:28px;color:#fff;transition:.2s}
-.vid .ph-play:hover .btn-play{transform:scale(1.08);background:rgba(255,255,255,.26)}
-.vid .lb{position:absolute;left:16px;bottom:14px;background:rgba(0,0,0,.5);color:#fff;font-size:13px;padding:6px 12px;border-radius:8px}
-.hero-video .cap{text-align:center;color:var(--muted);font-size:14px;margin-top:14px;font-weight:600}
-
 /* ===== 움직이는 목업 ===== */
 /* ① AIoT 온도 자동 슬라이더 */
 .ac-panel{text-align:center;padding:6px 4px 2px}
@@ -106,16 +96,6 @@ a{text-decoration:none;color:inherit}
 .cam.c4 .p-move{animation-duration:8s;animation-direction:reverse}
 @keyframes walk{0%{left:12%}50%{left:76%}100%{left:12%}}
 .cam .lb,.cam .live{position:relative;z-index:2}
-/* ⑤ 사물함 손가락 초기화 */
-.lk-stage{text-align:center;padding-top:2px}
-.lk-door{width:110px;height:140px;margin:6px auto 0;border-radius:12px;background:linear-gradient(160deg,#6b5a80,#3a3050);border:2px solid rgba(255,255,255,.2);position:relative;display:grid;place-items:center;transition:.4s}
-.lk-door.reset{background:linear-gradient(160deg,#3a4a36,#242e22);opacity:.85}
-.lk-door .num{font-weight:900;font-size:22px}
-.lk-door .lock{position:absolute;right:10px;top:50%;transform:translateY(-50%);font-size:18px}
-.lk-reset-btn{margin-top:16px;display:inline-block;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);border-radius:12px;padding:12px 22px;font-weight:800;font-size:14px;position:relative}
-.finger{position:absolute;font-size:30px;left:50%;bottom:-34px;transform:translateX(-50%);animation:tap 2.4s ease-in-out infinite}
-@keyframes tap{0%,100%{transform:translateX(-50%) translateY(0)}42%,52%{transform:translateX(-50%) translateY(-28px)}}
-.lk-status{margin-top:16px;font-size:14px;font-weight:800;color:#C8F03C;min-height:20px}
 
 /* 솔루션 인덱스 (스마트싱스 상단 칩) */
 .solnav{position:sticky;top:64px;z-index:80;background:var(--cream);border-bottom:1px solid var(--line)}
@@ -143,10 +123,7 @@ a{text-decoration:none;color:inherit}
 .dev-aiot{background:linear-gradient(160deg,#2E4231,#1c2a1e)}
 .dev-modi{background:linear-gradient(160deg,#3b5566,#20313b)}
 .dev-lock{background:linear-gradient(160deg,#7a3b28,#3a1d14)}
-.dev-locker{background:linear-gradient(160deg,#5a4a6b,#2c2338)}
 .dev-cctv{background:linear-gradient(160deg,#2b3540,#12181d)}
-.soon-badge{display:inline-block;background:var(--amber);color:#5a4300;font-weight:800;font-size:12px;padding:4px 11px;border-radius:999px;margin-left:8px;vertical-align:middle}
-.feat.soon .device{opacity:.9}
 .cam-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
 .cam{border:1px solid rgba(255,255,255,.14);border-radius:10px;min-height:110px;position:relative;overflow:hidden;background:#0e1620 center/cover no-repeat;filter:saturate(.72) contrast(1.06) brightness(.97)}
 .cam::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(18,36,54,.2),rgba(10,18,30,.34))}
@@ -310,20 +287,6 @@ a{text-decoration:none;color:inherit}
   </div>
 </header>
 
-<!-- 히어로 소개 영상 -->
-<div class="hero-video">
-  <div class="vid">
-    <!-- ▼ 실제 연결: 아래 iframe 주석을 풀고 VIDEO_ID를 유튜브 영상 ID로 교체하세요
-    <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="무인화 솔루션 소개 영상" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    -->
-    <div class="ph-play" onclick="alert('유튜브 영상 URL 연결 후 재생됩니다. (코드의 iframe 주석 해제 + VIDEO_ID 교체)')">
-      <div class="btn-play">▶</div>
-      <span class="lb">무인화 솔루션 소개 영상 · 유튜브 임베드 (교체 예정)</span>
-    </div>
-  </div>
-  <p class="cap">▶ 3분 만에 보는 무인화연구소의 무인 운영 시스템</p>
-</div>
-
 <!-- 솔루션 인덱스 -->
 <div class="solnav">
   <div class="wrap">
@@ -331,7 +294,6 @@ a{text-decoration:none;color:inherit}
     <a href="#modi">② AI 학습관리</a>
     <a href="#lock">③ 앱 결제·출입통제</a>
     <a href="#cctv">④ CCTV 관제</a>
-    <a href="#locker">⑤ 스마트 사물함 (예정)</a>
   </div>
 </div>
 
@@ -487,36 +449,6 @@ a{text-decoration:none;color:inherit}
           </div>
         </div>
         <div class="dev-note">실제 매장 CCTV 화면 · 라이브 연동 시 실시간 영상</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ⑤ 스마트 사물함 (예정) -->
-<section class="feat soon" id="locker">
-  <div class="wrap">
-    <div class="grid">
-      <div class="txt">
-        <span class="kick">⑤ 스마트 사물함</span><span class="soon-badge">준비 중 · 예정</span>
-        <h2>사물함 열쇠 분실 연락,<br>이제 안 받아요.</h2>
-        <p class="desc">손님이 폰으로 열고 잠그고, 이용이 끝나면 손가락 한 번으로 초기화돼요. 열쇠·번호키 관리 부담이 사라집니다.</p>
-        <ul>
-          <li>폰으로 사물함 배정 · 개폐</li>
-          <li>이용 종료 시 <b>손가락 한 번으로 초기화</b></li>
-          <li>분실 열쇠 · 비밀번호 관리 0</li>
-          <li>이용 현황을 관리자 앱에서 한눈에</li>
-        </ul>
-        <p class="desc" style="font-size:14px">* 스마트 사물함은 현재 개발 중이며, 실제 사양으로 교체 예정입니다.</p>
-      </div>
-      <div class="device dev-locker">
-        <div class="dev-top"><span>앤딩 앱 · 내 사물함</span><span>2층 스터디존</span></div>
-        <div class="dev-h" style="text-align:center">🔒 스마트 사물함</div>
-        <div class="lk-stage">
-          <div class="lk-door" id="lkDoor"><span class="num">B-07</span><span class="lock" id="lkLock">🔒</span></div>
-          <div class="lk-reset-btn">♻️ 이용 종료 · 초기화<span class="finger">👆</span></div>
-          <div class="lk-status" id="lkStatus">사용 중 · 잠금</div>
-        </div>
-        <div class="dev-note">손가락 한 번으로 초기화 (준비 중)</div>
       </div>
     </div>
   </div>
@@ -736,18 +668,6 @@ a{text-decoration:none;color:inherit}
     steps.forEach(function(s,k){s.classList.toggle('on',k===i);});
     i=(i+1)%steps.length;
   },1600);
-})();
-
-/* ⑤ 사물함 손가락 초기화 (사용중 ↔ 초기화 완료) */
-(function(){
-  var st=document.getElementById('lkStatus'),door=document.getElementById('lkDoor'),lock=document.getElementById('lkLock');
-  if(!st)return;
-  var reset=false;
-  setInterval(function(){
-    reset=!reset;
-    if(reset){st.textContent='♻️ 초기화 완료 · 반환됨';door.classList.add('reset');if(lock)lock.textContent='🔓';}
-    else{st.textContent='사용 중 · 잠금';door.classList.remove('reset');if(lock)lock.textContent='🔒';}
-  },2400);
 })();
 </script>
 
