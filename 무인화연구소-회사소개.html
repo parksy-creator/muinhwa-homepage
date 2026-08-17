@@ -52,13 +52,30 @@ a{text-decoration:none;color:inherit}
 .vcard .ic{width:52px;height:52px;border-radius:13px;background:#eef7ee;display:grid;place-items:center;font-size:26px;margin-bottom:16px}
 .vcard h4{font-size:19px;font-weight:800}.vcard p{color:var(--muted);font-size:14px;margin-top:8px}
 @media(max-width:760px){.vgrid{grid-template-columns:1fr}}
-/* 연혁 */
-.hist{max-width:720px;margin:0 auto;position:relative}
-.hist::before{content:"";position:absolute;left:14px;top:6px;bottom:6px;width:2px;background:var(--line)}
-.hrow{position:relative;padding:0 0 26px 46px}
-.hrow::before{content:"";position:absolute;left:8px;top:4px;width:14px;height:14px;border-radius:50%;background:var(--green);border:3px solid var(--paper)}
-.hrow .y{font-weight:900;color:var(--green)}
-.hrow .t{margin-top:2px;color:var(--muted)}
+/* 연혁 (2개씩 · ㄱ자 연결) */
+.hist{position:relative;display:grid;grid-template-columns:repeat(2,1fr);max-width:660px;margin:0 auto}
+.hrow{position:relative;text-align:center;padding:0 10px;min-height:152px}
+/* 같은 줄 안에서 점끼리 잇는 선 */
+.hrow::after{content:"";position:absolute;left:0;right:0;top:54px;height:2px;background:var(--line);z-index:0}
+.hrow:nth-child(2n+1)::after{left:50%}
+.hrow:nth-child(2n)::after{right:50%}
+.hrow:last-child::after{right:50%}
+.hrow::before{content:"";position:absolute;left:50%;top:48px;transform:translateX(-50%);width:14px;height:14px;border-radius:50%;background:var(--green);border:3px solid var(--paper);z-index:1}
+.hrow .y{font-weight:900;color:var(--green);font-size:15px;line-height:1.35;min-height:42px;display:flex;align-items:flex-end;justify-content:center}
+.hrow .t{margin-top:30px;color:var(--muted);font-size:14px;line-height:1.55;word-break:keep-all}
+/* 줄 바뀜 — 오른쪽 끝에서 내려와 왼쪽으로 이어지는 ㄱ자 */
+.hbend{position:absolute;left:25%;right:25%;height:152px;
+  border:2px solid var(--line);border-top:none;border-radius:0 0 18px 18px;z-index:0;pointer-events:none}
+.hbend.b1{top:54px}
+.hbend.b2{top:206px}
+@media(max-width:640px){
+  .hist{max-width:420px}
+  .hrow{min-height:162px;padding:0 6px}
+  .hrow .y{font-size:14px}
+  .hrow .t{font-size:13px}
+  .hbend{height:162px}
+  .hbend.b2{top:216px}
+}
 .cta{background:var(--green);color:#fff;text-align:center;padding:70px 0}
 .cta h2{font-size:28px;font-weight:900}.cta .tel{margin-top:14px;font-size:22px;font-weight:900;color:var(--lime)}
 .cta .btn{margin-top:22px;background:var(--lime);color:var(--ink)}
@@ -135,6 +152,8 @@ a{text-decoration:none;color:inherit}
     <div class="hrow"><div class="y">앤딩스페이스</div><div class="t">앤딩스페이스(무인공유오피스) 브랜드 런칭</div></div>
     <div class="hrow"><div class="y">고탁구</div><div class="t">고탁구(무인탁구) 브랜드 런칭</div></div>
     <div class="hrow"><div class="y">앤딩워크라운지</div><div class="t">앤딩워크라운지 브랜드 런칭 · 공실 수익화 모델 확장</div></div>
+    <span class="hbend b1" aria-hidden="true"></span>
+    <span class="hbend b2" aria-hidden="true"></span>
   </div>
   <p style="text-align:center;margin-top:16px;color:var(--muted);font-size:14px">* 브랜드별 런칭 시점(연·월)은 확정 후 표기 예정입니다.</p>
 </div></section>
