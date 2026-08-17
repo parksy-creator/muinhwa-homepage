@@ -52,22 +52,27 @@ a{text-decoration:none;color:inherit}
 .vcard .ic{width:52px;height:52px;border-radius:13px;background:#eef7ee;display:grid;place-items:center;font-size:26px;margin-bottom:16px}
 .vcard h4{font-size:19px;font-weight:800}.vcard p{color:var(--muted);font-size:14px;margin-top:8px}
 @media(max-width:760px){.vgrid{grid-template-columns:1fr}}
-/* 연혁 (2개씩 · ㄱ자 연결) */
+/* 연혁 (2개씩 · ㄹ자 흐름) */
 .hist{position:relative;display:grid;grid-template-columns:repeat(2,1fr);max-width:660px;margin:0 auto}
 .hrow{position:relative;text-align:center;padding:0 10px;min-height:152px}
-/* 같은 줄 안에서 점끼리 잇는 선 */
-.hrow::after{content:"";position:absolute;left:0;right:0;top:54px;height:2px;background:var(--line);z-index:0}
-.hrow:nth-child(2n+1)::after{left:50%}
-.hrow:nth-child(2n)::after{right:50%}
-.hrow:last-child::after{right:50%}
+/* ㄹ자 흐름 — 1→2 오른쪽으로, 내려와서 3→4 왼쪽으로, 다시 내려와 5
+   (항목 수가 바뀌면 아래 배치도 함께 조정해야 합니다) */
+.hrow:nth-child(1){grid-area:1/1}
+.hrow:nth-child(2){grid-area:1/2}
+.hrow:nth-child(3){grid-area:2/2}
+.hrow:nth-child(4){grid-area:2/1}
+.hrow:nth-child(5){grid-area:3/1}
+/* 같은 줄 안에서 점끼리 잇는 선 — 왼쪽 칸은 오른쪽으로, 오른쪽 칸은 왼쪽으로 */
+.hrow::after{content:"";position:absolute;top:54px;height:2px;background:var(--line);z-index:0;left:50%;right:0}
+.hrow:nth-child(2)::after,.hrow:nth-child(3)::after{left:0;right:50%}
+.hrow:nth-child(5)::after{display:none}   /* 마지막 항목 — 이어질 곳이 없으므로 선 제거 */
 .hrow::before{content:"";position:absolute;left:50%;top:48px;transform:translateX(-50%);width:14px;height:14px;border-radius:50%;background:var(--green);border:3px solid var(--paper);z-index:1}
 .hrow .y{font-weight:900;color:var(--green);font-size:15px;line-height:1.35;min-height:42px;display:flex;align-items:flex-end;justify-content:center}
 .hrow .t{margin-top:30px;color:var(--muted);font-size:14px;line-height:1.55;word-break:keep-all}
-/* 줄 바뀜 — 오른쪽 끝에서 내려와 왼쪽으로 이어지는 ㄱ자 */
-.hbend{position:absolute;left:25%;right:25%;height:152px;
-  border:2px solid var(--line);border-top:none;border-radius:0 0 18px 18px;z-index:0;pointer-events:none}
-.hbend.b1{top:54px}
-.hbend.b2{top:206px}
+/* 줄 바뀜 — 같은 칸에서 아래로 떨어지는 세로 연결선 */
+.hbend{position:absolute;width:2px;background:var(--line);z-index:0;pointer-events:none}
+.hbend.b1{left:75%;top:54px;height:152px}   /* 2번 → 3번 (오른쪽 칸) */
+.hbend.b2{left:25%;top:206px;height:152px}  /* 4번 → 5번 (왼쪽 칸) */
 @media(max-width:640px){
   .hist{max-width:420px}
   .hrow{min-height:162px;padding:0 6px}
