@@ -76,6 +76,14 @@ a{text-decoration:none;color:inherit}
 .half{flex:1 1 50%;position:relative;overflow:hidden;display:flex;align-items:center;
   transition:flex-basis .5s cubic-bezier(.4,0,.2,1);cursor:pointer}
 .half .bgpat{position:absolute;inset:0;opacity:.16;mix-blend-mode:overlay}
+/* 실제 매장 사진을 옅게 배경으로 (글자 가독성 우선) */
+.half .bgimg{position:absolute;inset:0;background-size:cover;background-position:center;z-index:0}
+.half.left .bgimg{background-image:url('assets/hero-solution.jpg');opacity:.42;filter:grayscale(.3) brightness(.6) contrast(1.06)}
+.half.right .bgimg{background-image:url('assets/hero-startup.jpg');opacity:.5;filter:saturate(.4) brightness(.98)}
+/* 사진 위 그라데이션 — 글자 뒤쪽을 눌러 대비 확보 */
+.half .veil{position:absolute;inset:0;z-index:1}
+.half.left .veil{background:linear-gradient(100deg,rgba(33,63,44,.92) 0%,rgba(46,90,62,.74) 48%,rgba(46,90,62,.3) 100%)}
+.half.right .veil{background:linear-gradient(260deg,rgba(200,240,60,.9) 0%,rgba(212,245,82,.72) 48%,rgba(212,245,82,.28) 100%)}
 .half .inner{position:relative;z-index:2;padding:0 8% 0 12%;max-width:640px;margin-left:auto}
 .half.right .inner{margin-left:0;margin-right:auto;padding:0 12% 0 8%}
 .half .eb{display:inline-block;font-weight:800;font-size:15px;letter-spacing:.04em;padding:7px 15px;border-radius:999px;margin-bottom:22px}
@@ -185,6 +193,8 @@ a{text-decoration:none;color:inherit}
 <main class="split-hero">
   <!-- 왼쪽: 무인화 솔루션 (딥그린) -->
   <a class="half left" href="무인화연구소-솔루션.html" aria-label="무인화 솔루션 보기">
+    <div class="bgimg"></div>
+    <div class="veil"></div>
     <div class="bgpat"></div>
     <div class="inner">
       <span class="eb">무인화 솔루션</span>
@@ -197,6 +207,8 @@ a{text-decoration:none;color:inherit}
 
   <!-- 오른쪽: 무인 창업 (라임) -->
   <a class="half right" href="무인화연구소-창업.html" aria-label="무인 창업 안내 보기">
+    <div class="bgimg"></div>
+    <div class="veil"></div>
     <div class="bgpat"></div>
     <div class="inner">
       <span class="eb">무인 창업</span>
