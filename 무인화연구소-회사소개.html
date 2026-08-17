@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>회사소개 | 무인화연구소</title>
-<meta name="description" content="무인화연구소는 무인 매장 시스템을 직접 개발하고 직영으로 검증한 뒤 프랜차이즈로 확장하는 무인 공간 사업 본부입니다. 대표 인사말·일하는 방식·연혁을 안내합니다.">
+<meta name="description" content="무인화연구소는 무인 매장 시스템을 직접 개발하고 직영으로 검증한 뒤 프랜차이즈로 확장하는 무인 공간 사업 본부입니다. 대표 인사말과 일하는 방식을 안내합니다.">
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://www.muinlab.io/about">
 <meta property="og:type" content="website"><meta property="og:site_name" content="무인화연구소">
@@ -52,35 +52,6 @@ a{text-decoration:none;color:inherit}
 .vcard .ic{width:52px;height:52px;border-radius:13px;background:#eef7ee;display:grid;place-items:center;font-size:26px;margin-bottom:16px}
 .vcard h4{font-size:19px;font-weight:800}.vcard p{color:var(--muted);font-size:14px;margin-top:8px}
 @media(max-width:760px){.vgrid{grid-template-columns:1fr}}
-/* 연혁 (2개씩 · ㄹ자 흐름) */
-.hist{position:relative;display:grid;grid-template-columns:repeat(2,1fr);max-width:660px;margin:0 auto}
-.hrow{position:relative;text-align:center;padding:0 10px;min-height:152px}
-/* ㄹ자 흐름 — 1→2 오른쪽으로, 내려와서 3→4 왼쪽으로, 다시 내려와 5
-   (항목 수가 바뀌면 아래 배치도 함께 조정해야 합니다) */
-.hrow:nth-child(1){grid-area:1/1}
-.hrow:nth-child(2){grid-area:1/2}
-.hrow:nth-child(3){grid-area:2/2}
-.hrow:nth-child(4){grid-area:2/1}
-.hrow:nth-child(5){grid-area:3/1}
-/* 같은 줄 안에서 점끼리 잇는 선 — 왼쪽 칸은 오른쪽으로, 오른쪽 칸은 왼쪽으로 */
-.hrow::after{content:"";position:absolute;top:54px;height:2px;background:var(--line);z-index:0;left:50%;right:0}
-.hrow:nth-child(2)::after,.hrow:nth-child(3)::after{left:0;right:50%}
-.hrow:nth-child(5)::after{display:none}   /* 마지막 항목 — 이어질 곳이 없으므로 선 제거 */
-.hrow::before{content:"";position:absolute;left:50%;top:48px;transform:translateX(-50%);width:14px;height:14px;border-radius:50%;background:var(--green);border:3px solid var(--paper);z-index:1}
-.hrow .y{font-weight:900;color:var(--green);font-size:15px;line-height:1.35;min-height:42px;display:flex;align-items:flex-end;justify-content:center}
-.hrow .t{margin-top:30px;color:var(--muted);font-size:14px;line-height:1.55;word-break:keep-all}
-/* 줄 바뀜 — 같은 칸에서 아래로 떨어지는 세로 연결선 */
-.hbend{position:absolute;width:2px;background:var(--line);z-index:0;pointer-events:none}
-.hbend.b1{left:75%;top:54px;height:152px}   /* 2번 → 3번 (오른쪽 칸) */
-.hbend.b2{left:25%;top:206px;height:152px}  /* 4번 → 5번 (왼쪽 칸) */
-@media(max-width:640px){
-  .hist{max-width:420px}
-  .hrow{min-height:162px;padding:0 6px}
-  .hrow .y{font-size:14px}
-  .hrow .t{font-size:13px}
-  .hbend{height:162px}
-  .hbend.b2{top:216px}
-}
 .cta{background:var(--green);color:#fff;text-align:center;padding:70px 0}
 .cta h2{font-size:28px;font-weight:900}.cta .tel{margin-top:14px;font-size:22px;font-weight:900;color:var(--lime)}
 .cta .btn{margin-top:22px;background:var(--lime);color:var(--ink)}
@@ -146,21 +117,6 @@ a{text-decoration:none;color:inherit}
     <div class="vcard"><div class="ic">🏬</div><h4>직영으로 먼저 검증</h4><p>직접 운영해 본 것만 점주에게 권합니다. 검증되지 않은 모델은 넘기지 않습니다.</p></div>
     <div class="vcard"><div class="ic">🤝</div><h4>오픈 후에도 함께</h4><p>상권 분석·시공·오픈·운영까지, 창업 이후의 운영을 함께합니다.</p></div>
   </div>
-</div></section>
-
-<!-- 연혁 -->
-<section class="sec"><div class="wrap">
-  <div class="sec-head"><div class="eb">History</div><h2>걸어온 길</h2></div>
-  <div class="hist">
-    <div class="hrow"><div class="y">2022. 11</div><div class="t">무인화연구소 창업 · 무인 공간 사업 시작</div></div>
-    <div class="hrow"><div class="y">앤딩스터디카페</div><div class="t">앤딩스터디카페 브랜드 런칭 · 직영 운영 및 검증</div></div>
-    <div class="hrow"><div class="y">앤딩스페이스</div><div class="t">앤딩스페이스(무인공유오피스) 브랜드 런칭</div></div>
-    <div class="hrow"><div class="y">고탁구</div><div class="t">고탁구(무인탁구) 브랜드 런칭</div></div>
-    <div class="hrow"><div class="y">앤딩워크라운지</div><div class="t">앤딩워크라운지 브랜드 런칭 · 공실 수익화 모델 확장</div></div>
-    <span class="hbend b1" aria-hidden="true"></span>
-    <span class="hbend b2" aria-hidden="true"></span>
-  </div>
-  <p style="text-align:center;margin-top:16px;color:var(--muted);font-size:14px">* 브랜드별 런칭 시점(연·월)은 확정 후 표기 예정입니다.</p>
 </div></section>
 
 <section class="cta"><div class="wrap">
