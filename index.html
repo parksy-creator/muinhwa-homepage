@@ -83,14 +83,11 @@ a{text-decoration:none;color:inherit}
 
 /* 솔루션 쪽 — 반도체 회로 느낌의 배경 오버레이 */
 .aiov{position:absolute;inset:0;z-index:2;pointer-events:none}
-.aiov .circuit{position:absolute;inset:0;opacity:.42;background-size:240px 240px;
-  background-image:url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='240'%20height='240'%20viewBox='0%200%20240%20240'%3E%3Cg%20fill='none'%20stroke='%23C8F03C'%20stroke-width='1.3'%20stroke-opacity='.6'%3E%3Cpath%20d='M0%2034H74V104H160V34H240'/%3E%3Cpath%20d='M0%20146H50V206H128'/%3E%3Cpath%20d='M128%20206V166H240'/%3E%3Cpath%20d='M38%200V64H118V0'/%3E%3Cpath%20d='M196%20240V178H118'/%3E%3Cpath%20d='M160%2034V0'/%3E%3C/g%3E%3Cg%20fill='%23C8F03C'%20fill-opacity='.8'%3E%3Ccircle%20cx='74'%20cy='104'%20r='3.4'/%3E%3Ccircle%20cx='160'%20cy='34'%20r='3.4'/%3E%3Ccircle%20cx='50'%20cy='146'%20r='3.4'/%3E%3Ccircle%20cx='128'%20cy='206'%20r='3.4'/%3E%3Ccircle%20cx='118'%20cy='64'%20r='3.4'/%3E%3Ccircle%20cx='196'%20cy='178'%20r='3.4'/%3E%3C/g%3E%3Cg%20fill='none'%20stroke='%23C8F03C'%20stroke-opacity='.45'%3E%3Crect%20x='96'%20y='96'%20width='48'%20height='48'%20rx='7'/%3E%3Crect%20x='108'%20y='108'%20width='24'%20height='24'%20rx='3'/%3E%3C/g%3E%3C/svg%3E");
-  -webkit-mask-image:radial-gradient(ellipse at 76% 44%,#000 0%,rgba(0,0,0,.55) 42%,transparent 72%);
-  mask-image:radial-gradient(ellipse at 76% 44%,#000 0%,rgba(0,0,0,.55) 42%,transparent 72%)}
-.aiov .scan{position:absolute;left:0;right:0;top:0;height:200px;
-  background:linear-gradient(180deg,rgba(200,240,60,.14),transparent);animation:aiScan 8s ease-in-out infinite}
-@keyframes aiScan{0%,100%{transform:translateY(-12%)}50%{transform:translateY(300%)}}
-@media(max-width:640px){.aiov .circuit{opacity:.3;background-size:170px 170px}}
+.aiov .circuit{position:absolute;inset:0;opacity:.5;background-size:cover;background-position:center;background-repeat:no-repeat;
+  background-image:url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20800%201000'%20preserveAspectRatio='xMidYMid%20slice'%3E%3Cg%20fill='none'%20stroke='%23C8F03C'%20stroke-width='2.6'%20stroke-opacity='.62'%3E%3Cpath%20d='M-60%20180H300V430H620V140H860'/%3E%3Cpath%20d='M-60%20700H170V880H520V620H860'/%3E%3Cpath%20d='M110%20-60V300H470V-60'/%3E%3Cpath%20d='M700%201060V770H470'/%3E%3Cpath%20d='M620%20430V560H860'/%3E%3Cpath%20d='M300%20430V560H240V860'/%3E%3C/g%3E%3Cg%20fill='%23C8F03C'%20fill-opacity='.8'%3E%3Ccircle%20cx='300'%20cy='430'%20r='8'/%3E%3Ccircle%20cx='620'%20cy='140'%20r='8'/%3E%3Ccircle%20cx='170'%20cy='880'%20r='8'/%3E%3Ccircle%20cx='520'%20cy='620'%20r='8'/%3E%3Ccircle%20cx='470'%20cy='300'%20r='8'/%3E%3Ccircle%20cx='470'%20cy='770'%20r='8'/%3E%3C/g%3E%3Cg%20fill='none'%20stroke='%23C8F03C'%20stroke-opacity='.5'%20stroke-width='2.4'%3E%3Crect%20x='330'%20y='450'%20width='180'%20height='180'%20rx='20'/%3E%3Crect%20x='372'%20y='492'%20width='96'%20height='96'%20rx='10'/%3E%3C/g%3E%3C/svg%3E");
+  -webkit-mask-image:linear-gradient(100deg,transparent 0%,rgba(0,0,0,.35) 30%,#000 68%,#000 100%);
+  mask-image:linear-gradient(100deg,transparent 0%,rgba(0,0,0,.35) 30%,#000 68%,#000 100%)}
+@media(max-width:640px){.aiov .circuit{opacity:.34}}
 /* 사진 위 그라데이션 — 글자 뒤쪽을 눌러 대비 확보 */
 .half .veil{position:absolute;inset:0;z-index:1}
 .half.left .veil{background:linear-gradient(100deg,rgba(33,63,44,.92) 0%,rgba(46,90,62,.74) 48%,rgba(46,90,62,.3) 100%)}
@@ -209,7 +206,6 @@ a{text-decoration:none;color:inherit}
     <div class="bgpat"></div>
     <div class="aiov" aria-hidden="true">
       <div class="circuit"></div>
-      <div class="scan"></div>
     </div>
     <div class="inner">
       <span class="eb">무인화 솔루션</span>
